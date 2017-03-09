@@ -1,0 +1,37 @@
+//
+//  XSNetworkStatus.m
+//  Babylon
+//
+//  Created by sam.l on 14-6-3.
+//  Copyright (c) 2014年 Yixue. All rights reserved.
+
+#import "XSNetworkStatus.h"
+#import "Reachability.h"
+
+@implementation XSNetworkStatus
+
+DEF_SINGLETON(XSNetworkStatus)
+
+- (id)init
+{
+    if (self  = [super init])
+    {
+        Reachability *reachability = [[Reachability reachabilityForInternetConnection] retain];
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(checkStatus:)
+                                                     name:kReachabilityChangedNotification
+                                                   object:nil];
+        [reachability startNotifier];
+        _netStatus = [reachability currentReachabilityStatus];
+    }
+    return self;
+}
+
+#pragma mark - 检查网络状态
+-(void)checkStatus:(NSNotification *)notification
+{
+     Reachability *reachability = [notification object];
+     _netStatus = [reachability currentReachabilityStatus];
+}
+
+@end

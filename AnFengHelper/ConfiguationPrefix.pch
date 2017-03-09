@@ -1,0 +1,26 @@
+//
+//  ConfiguationPrefix.pch
+//  LearnObjectiveC
+//
+//  Created by 吴可高 on 16/4/2.
+//  Copyright © 2016年 吴可高. All rights reserved.
+//
+
+#ifndef ConfiguationPrefix_pch
+#define ConfiguationPrefix_pch
+
+#import "ProjectAppConfiguration.h"
+#import "OOAlertView.h"
+#import "AFNetworking.h"
+#import "HttpRequestTool.h"
+#import "MJExtension.h"
+#import "IQKeyboardManager.h"
+#import "UIViewController+Transitioning.h"
+#import "UIImageView+WebCache.h"
+#import "UIControl+SettingEnable.h"
+#import "UIKit+AFNetworking.h"
+#import "OOBaseViewContrlManager.h"
+#import "Masonry.h"
+#import "UIView+RelativePosition.h"
+#import "LearnObjectiveC_TypeDefiner.h"
+#endif
