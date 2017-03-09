@@ -7,20 +7,34 @@
 //
 
 #import "AppDelegate.h"
+#import "IQKeyboardManager.h"
 #import "RootViewController.h"
+#import "FeatureController.h"
 
+NSString * const lunch = @"lunch";
 @interface AppDelegate ()
-
 @end
-
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    self.window.backgroundColor = [UIColor whiteColor];
+    [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
+    [IQKeyboardManager sharedManager].enable = YES;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside  = YES;
+    [IQKeyboardManager sharedManager].keyboardDistanceFromTextField = 20.f;
+     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
-    RootViewController * rootViewController = [RootViewController new];
-    self.window.rootViewController = rootViewController;
+    if (![[NSUserDefaults standardUserDefaults]objectForKey:lunch]) {
+        [[NSUserDefaults standardUserDefaults]setObject:@(1) forKey:lunch];
+        FeatureController * featureController = [[FeatureController alloc]init];
+        self.window.rootViewController = featureController;
+    }
+    else
+    {
+        RootViewController * rootViewController = [RootViewController new];
+        UINavigationController * navigationController  = [[UINavigationController alloc]initWithRootViewController:rootViewController];
+        self.window.rootViewController = navigationController;
+    }
     return YES;
 }
 

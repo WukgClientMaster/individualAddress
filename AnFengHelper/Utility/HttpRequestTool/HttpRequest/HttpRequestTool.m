@@ -22,22 +22,18 @@ DEF_SINGLETON(HttpRequestTool)
 {
     objc_setAssociatedObject(self, @selector(setMIMEType:), MIMEType, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 -(void)setQueryKey:(NSDictionary *)queryKey
 {
     objc_setAssociatedObject(self, @selector(setQueryKey:), queryKey, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
-
 -(NSString *)MIMEType
 {
   return  objc_getAssociatedObject(self, @selector(setMIMEType:));
 }
-
 -(NSDictionary *)queryKey
 {
     return objc_getAssociatedObject(self, @selector(setQueryKey:));
 }
-
 /*************  AFHTTPSessionManager  **********/
 - (void)getSessionTaskWithPath:(NSString*)path
                         params:(NSDictionary*)params
@@ -82,7 +78,7 @@ DEF_SINGLETON(HttpRequestTool)
         urlString = path;
     
     }
-    /*
+ 
     [self.sessionManager POST:urlString parameters:params progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
@@ -98,7 +94,6 @@ DEF_SINGLETON(HttpRequestTool)
         } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         failure(error);
     }];
-    */
 }
 
 - (void)uploadSessionTaskWith:(NSString*)path
@@ -107,7 +102,6 @@ DEF_SINGLETON(HttpRequestTool)
                       failure:(OperationFailureBlock)failure
                 uploadProgess:(OperationProgressBlock)progress;
 {
-    /*
     [self.sessionManager POST:path parameters:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
          if (files){
              [files enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
@@ -137,7 +131,6 @@ DEF_SINGLETON(HttpRequestTool)
      } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
          
      }];
-    */
 }
 
 -(void)downloadSesssionTaskWith:(NSString*)path
