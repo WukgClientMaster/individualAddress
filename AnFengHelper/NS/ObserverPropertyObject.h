@@ -5,7 +5,6 @@
 //  Created by 吴可高 on 16/3/31.
 //  Copyright © 2016年 吴可高. All rights reserved.
 //
-
 #import <Foundation/Foundation.h>
 
 @interface ObserverPropertyObject : NSObject

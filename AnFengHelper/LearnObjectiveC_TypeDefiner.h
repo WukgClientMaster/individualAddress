@@ -17,7 +17,7 @@
                     green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \
                      blue:((float)(rgbValue & 0xFF))/255.0 \
                     alpha:(float)1.0]
-
+/*
 #ifdef  DEBUG
 #define __NSLog(format, ...) do {      \
     fprintf(stderr,"===================\n");\
@@ -28,6 +28,19 @@
     } while ( 0 )
 #else
 #define __NSLog(...)
+#endif
+*/
+//Custom Debug
+#ifdef  Release
+    #define __NSLog(...)
+    #else
+    #define __NSLog(format, ...) do {      \
+    fprintf(stderr,"===================\n");\
+    fprintf(stderr,"{[%s : %d]\n %s}\n" ,\
+    [[[NSString stringWithUTF8String:__FILE__] lastPathComponent] UTF8String], __LINE__, __func__);\
+    NSLog((format),##__VA_ARGS__);  \
+    fprintf(stderr,"===================\n");\
+    } while ( 0 )
 #endif
 
 
@@ -62,6 +75,37 @@
 #define  __NSLogSize(size)  __NSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
 
 #define  __NSLogPoint(point) __NSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)
+
+/*
+NSMutableDictionary * _mutableDictionary;\
+if (!_mutableDictionary) {\
+    _mutableDictionary = [[NSMutableDictionary alloc] init];\
+#define OA_DEFINE_TYPE_ECODE_CASE(__name,__type) \
+[_name setObject:[NSString stringWithUTF8String:@encode(__type)] forKey:@#__type];\
+
+    OA_DEFINE_TYPE_ECODE_CASE(id)
+    OA_DEFINE_TYPE_ECODE_CASE(BOOL)
+    OA_DEFINE_TYPE_ECODE_CASE(int)
+    OA_DEFINE_TYPE_ECODE_CASE(void)
+    OA_DEFINE_TYPE_ECODE_CASE(char)
+    OA_DEFINE_TYPE_ECODE_CASE(short)
+*/
+
+/*
+#define OAOBJECT_INITIALIZE(_name, _prep, _type) \
++(instancetype)_name:(_type)prep \
+{   \
+OAObject * obj = [[OAObject alloc]init]; \
+obj._prep = prep; \
+return obj;\
+}
+
+OAOBJECT_INITIALIZE(obj, obj , id)
+OAOBJECT_INITIALIZE(pointer, pointerObj, void*)
+OAOBJECT_INITIALIZE(weakObj, weakObj, id)
+OAOBJECT_INITIALIZE(assignObj, assignObj, id)
+*/
+
 
 @interface LearnObjectiveC_TypeDefiner : NSObject
 

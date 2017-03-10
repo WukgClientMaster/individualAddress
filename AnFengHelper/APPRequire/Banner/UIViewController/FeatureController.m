@@ -7,7 +7,7 @@
 //
 
 #import "FeatureController.h"
-#import "RootViewController.h"
+#import "AnFengTabBarController.h"
 
 static FeatureController * _featureController = nil;
 static dispatch_once_t once;
@@ -15,7 +15,7 @@ static dispatch_once_t once;
 @property(nonatomic,strong)UIScrollView * scrollView;
 @property(nonatomic,strong)NSMutableArray * banners;
 @property(nonatomic,strong)UIButton * useingAPPItem;
-@property(nonatomic,strong)RootViewController * rootController;
+@property(nonatomic,strong)AnFengTabBarController * anFengTabBarController;
 
 @end
 
@@ -78,17 +78,6 @@ static dispatch_once_t once;
     });
     return _scrollView;
 }
-
--(RootViewController *)rootController
-{
-    _rootController = ({
-        if (!_rootController) {
-            _rootController = [[RootViewController alloc]init];
-        }
-        _rootController;
-    });
-    return _rootController;
-}
 -(BOOL)prefersStatusBarHidden
 {
     return YES;
@@ -123,8 +112,7 @@ static dispatch_once_t once;
 
 -(void)useingAPP:(id)sender
 {
-    UINavigationController * navigationController = [[UINavigationController alloc]initWithRootViewController:self.rootController];
-    [UIApplication sharedApplication].keyWindow.rootViewController = navigationController;
+    AnFengTabBarController * anFengTabBarController = [AnFengTabBarController shareInstance];
+    [UIApplication sharedApplication].keyWindow.rootViewController = anFengTabBarController;
 }
-
 @end

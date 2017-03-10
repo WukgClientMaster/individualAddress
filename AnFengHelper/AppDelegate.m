@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import "IQKeyboardManager.h"
-#import "RootViewController.h"
+#import "AnFengTabBarController.h"
 #import "FeatureController.h"
 
 NSString * const lunch = @"lunch";
@@ -26,14 +26,13 @@ NSString * const lunch = @"lunch";
     [self.window makeKeyAndVisible];
     if (![[NSUserDefaults standardUserDefaults]objectForKey:lunch]) {
         [[NSUserDefaults standardUserDefaults]setObject:@(1) forKey:lunch];
-        FeatureController * featureController = [[FeatureController alloc]init];
+        FeatureController * featureController = [FeatureController shareInstance];
         self.window.rootViewController = featureController;
     }
     else
     {
-        RootViewController * rootViewController = [RootViewController new];
-        UINavigationController * navigationController  = [[UINavigationController alloc]initWithRootViewController:rootViewController];
-        self.window.rootViewController = navigationController;
+        AnFengTabBarController * anFengTabBarController = [AnFengTabBarController shareInstance];
+        self.window.rootViewController = anFengTabBarController;
     }
     return YES;
 }

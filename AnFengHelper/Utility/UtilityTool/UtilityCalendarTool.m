@@ -38,7 +38,11 @@
 + (NSInteger)weeklyOrdinality:(NSDate*)date;
 {
     NSDate * firstDate = [self firstDay:date];
+#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_8_0
+    return [[NSCalendar currentCalendar]ordinalityOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitWeekday forDate:firstDate];
+#else
     return [[NSCalendar currentCalendar] ordinalityOfUnit:NSDayCalendarUnit inUnit:NSWeekCalendarUnit forDate:firstDate];
+#endif
 }
 
 //NSDate 一个月有多少周
