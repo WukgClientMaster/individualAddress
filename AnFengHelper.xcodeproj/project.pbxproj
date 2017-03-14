@@ -210,6 +210,13 @@
 		6BD523B31E728CAC00918160 /* APPCustomItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD523B21E728CAC00918160 /* APPCustomItem.m */; settings = {ASSET_TAGS = (); }; };
 		6BD523BA1E72A75300918160 /* OOTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD523B91E72A75300918160 /* OOTableCell.m */; settings = {ASSET_TAGS = (); }; };
 		6BD523BD1E72AA8E00918160 /* SettingCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD523BC1E72AA8E00918160 /* SettingCell.m */; settings = {ASSET_TAGS = (); }; };
+		6BDBEA021E763688007F5436 /* APPSqliteManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDBEA011E763688007F5436 /* APPSqliteManager.m */; settings = {ASSET_TAGS = (); }; };
+		6BDBEA0F1E764429007F5436 /* APPDataBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDBEA0E1E764429007F5436 /* APPDataBase.m */; settings = {ASSET_TAGS = (); }; };
+		6BDBEA121E76445F007F5436 /* APPDataBaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDBEA111E76445F007F5436 /* APPDataBaseQueue.m */; settings = {ASSET_TAGS = (); }; };
+		6BDBEA151E764548007F5436 /* APPDataBasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDBEA141E764548007F5436 /* APPDataBasePool.m */; settings = {ASSET_TAGS = (); }; };
+		6BDBEA181E764816007F5436 /* APPResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BDBEA171E764816007F5436 /* APPResultSet.m */; settings = {ASSET_TAGS = (); }; };
+		6BDBEA1A1E765407007F5436 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6BDBEA191E765407007F5436 /* libsqlite3.tbd */; };
+		6BDBEA1E1E7688E3007F5436 /* AnFengSqlite.db in Resources */ = {isa = PBXBuildFile; fileRef = 6BDBEA1D1E7688E3007F5436 /* AnFengSqlite.db */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -633,6 +640,19 @@
 		6BD523B91E72A75300918160 /* OOTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OOTableCell.m; sourceTree = "<group>"; };
 		6BD523BB1E72AA8E00918160 /* SettingCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingCell.h; sourceTree = "<group>"; };
 		6BD523BC1E72AA8E00918160 /* SettingCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingCell.m; sourceTree = "<group>"; };
+		6BDBEA001E763688007F5436 /* APPSqliteManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPSqliteManager.h; sourceTree = "<group>"; };
+		6BDBEA011E763688007F5436 /* APPSqliteManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPSqliteManager.m; sourceTree = "<group>"; };
+		6BDBEA0C1E763991007F5436 /* APPDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APPDB.h; sourceTree = "<group>"; };
+		6BDBEA0D1E764429007F5436 /* APPDataBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPDataBase.h; sourceTree = "<group>"; };
+		6BDBEA0E1E764429007F5436 /* APPDataBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDataBase.m; sourceTree = "<group>"; };
+		6BDBEA101E76445F007F5436 /* APPDataBaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPDataBaseQueue.h; sourceTree = "<group>"; };
+		6BDBEA111E76445F007F5436 /* APPDataBaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDataBaseQueue.m; sourceTree = "<group>"; };
+		6BDBEA131E764548007F5436 /* APPDataBasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPDataBasePool.h; sourceTree = "<group>"; };
+		6BDBEA141E764548007F5436 /* APPDataBasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPDataBasePool.m; sourceTree = "<group>"; };
+		6BDBEA161E764816007F5436 /* APPResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPResultSet.h; sourceTree = "<group>"; };
+		6BDBEA171E764816007F5436 /* APPResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPResultSet.m; sourceTree = "<group>"; };
+		6BDBEA191E765407007F5436 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		6BDBEA1D1E7688E3007F5436 /* AnFengSqlite.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = AnFengSqlite.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -640,6 +660,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDBEA1A1E765407007F5436 /* libsqlite3.tbd in Frameworks */,
 				6BD523621E724FDE00918160 /* Foundation.framework in Frameworks */,
 				6BD523611E724FD700918160 /* UIKit.framework in Frameworks */,
 			);
@@ -781,10 +802,12 @@
 		6B8625BA1E713F35006DB9F4 /* AnFengHelper */ = {
 			isa = PBXGroup;
 			children = (
+				6BDBEA191E765407007F5436 /* libsqlite3.tbd */,
 				6B8625E11E714260006DB9F4 /*  ios develop notes.txt */,
 				6B8625E21E714260006DB9F4 /* ConfiguationPrefix.pch */,
 				6B8628421E7145BA006DB9F4 /* ProjectAppConfiguration.h */,
 				6B8628431E7145D3006DB9F4 /* LearnObjectiveC_TypeDefiner.h */,
+				6BDBEA1D1E7688E3007F5436 /* AnFengSqlite.db */,
 				6B7CC1D31E714B1E0061C622 /* APPRequire */,
 				6B8625E31E714260006DB9F4 /* NS */,
 				6B8625FF1E714260006DB9F4 /* UI */,
@@ -1169,6 +1192,17 @@
 				6B8626A71E714260006DB9F4 /* AppCacheManager.m */,
 				6B8626A81E714260006DB9F4 /* XMLDictionary.h */,
 				6B8626A91E714260006DB9F4 /* XMLDictionary.m */,
+				6BDBEA0C1E763991007F5436 /* APPDB.h */,
+				6BDBEA161E764816007F5436 /* APPResultSet.h */,
+				6BDBEA171E764816007F5436 /* APPResultSet.m */,
+				6BDBEA131E764548007F5436 /* APPDataBasePool.h */,
+				6BDBEA141E764548007F5436 /* APPDataBasePool.m */,
+				6BDBEA101E76445F007F5436 /* APPDataBaseQueue.h */,
+				6BDBEA111E76445F007F5436 /* APPDataBaseQueue.m */,
+				6BDBEA0D1E764429007F5436 /* APPDataBase.h */,
+				6BDBEA0E1E764429007F5436 /* APPDataBase.m */,
+				6BDBEA001E763688007F5436 /* APPSqliteManager.h */,
+				6BDBEA011E763688007F5436 /* APPSqliteManager.m */,
 			);
 			path = APPCache;
 			sourceTree = "<group>";
@@ -1829,6 +1863,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B7CC2061E715B780061C622 /* LICENSE in Resources */,
+				6BDBEA1E1E7688E3007F5436 /* AnFengSqlite.db in Resources */,
 				6B8625CC1E713F35006DB9F4 /* LaunchScreen.xib in Resources */,
 				6B8627851E714260006DB9F4 /*  ios develop notes.txt in Resources */,
 				6B8628041E714261006DB9F4 /* IQKeyboardManager.bundle in Resources */,
@@ -1920,6 +1955,7 @@
 				6BD5238C1E725C9500918160 /* OOBaseController.m in Sources */,
 				6B8627A51E714260006DB9F4 /* OOGuideViewController.m in Sources */,
 				6B8627B31E714261006DB9F4 /* UIResponder+Observer.m in Sources */,
+				6BDBEA121E76445F007F5436 /* APPDataBaseQueue.m in Sources */,
 				6B8628051E714261006DB9F4 /* MASCompositeConstraint.m in Sources */,
 				6BD523B01E728C4300918160 /* APPSwitchItem.m in Sources */,
 				6B8627C61E714261006DB9F4 /* AsynProgressLoadingView.m in Sources */,
@@ -1936,6 +1972,7 @@
 				6B7CC2001E715B780061C622 /* AFHTTPSessionManager.m in Sources */,
 				6B8628111E714261006DB9F4 /* MJRefreshFooter.m in Sources */,
 				6B7CC20A1E715B780061C622 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				6BDBEA181E764816007F5436 /* APPResultSet.m in Sources */,
 				6B8627911E714260006DB9F4 /* NSUserDefaults+NSKeyedArchiver.m in Sources */,
 				6B86280D1E714261006DB9F4 /* View+MASAdditions.m in Sources */,
 				6B8627E71E714261006DB9F4 /* NSString+MJExtension.m in Sources */,
@@ -1960,6 +1997,7 @@
 				6B86279D1E714260006DB9F4 /* CAEffectTransition.m in Sources */,
 				6B8627A01E714260006DB9F4 /* OOBaseSplashController.m in Sources */,
 				6B8627FE1E714261006DB9F4 /* IQSegmentedNextPrevious.m in Sources */,
+				6BDBEA151E764548007F5436 /* APPDataBasePool.m in Sources */,
 				6B8627A11E714260006DB9F4 /* OOBaseTabBarController.m in Sources */,
 				6B8628091E714261006DB9F4 /* MASViewAttribute.m in Sources */,
 				6B8627D51E714261006DB9F4 /* OOWebViewProgressView.m in Sources */,
@@ -1967,6 +2005,7 @@
 				6B8628031E714261006DB9F4 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				6B8627E21E714261006DB9F4 /* MJProperty.m in Sources */,
 				6B8628121E714261006DB9F4 /* MJRefreshGifFooter.m in Sources */,
+				6BDBEA021E763688007F5436 /* APPSqliteManager.m in Sources */,
 				6BD5236A1E725A6900918160 /* AnFengHelperController.m in Sources */,
 				6B8627A31E714260006DB9F4 /* OOBaseViewContrlManager.m in Sources */,
 				6B86283B1E7142E8006DB9F4 /* APPUser.m in Sources */,
@@ -2030,6 +2069,7 @@
 				6B7CC20B1E715B780061C622 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				6B8627C21E714261006DB9F4 /* ActionSheetView.m in Sources */,
 				6B8627D61E714261006DB9F4 /* PolyActivity.m in Sources */,
+				6BDBEA0F1E764429007F5436 /* APPDataBase.m in Sources */,
 				6B8627FC1E714261006DB9F4 /* IQKeyboardManager.m in Sources */,
 				6BD523921E725CC200918160 /* OOBaseView.m in Sources */,
 				6B8627C11E714261006DB9F4 /* PickerSourceModel.m in Sources */,

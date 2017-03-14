@@ -9,6 +9,7 @@
 #import "MoreViewController.h"
 #import "APPItemConfig.h"
 #import "SettingCell.h"
+#import "APPDB.h"
 
 @interface MoreViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) UITableView * tableView;

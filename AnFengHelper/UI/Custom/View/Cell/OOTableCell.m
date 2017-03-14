@@ -49,6 +49,7 @@
     return cell;
 }
 
+
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     if ([super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
@@ -65,7 +66,6 @@
 
 -(void)setContentViewStyle;
 {
-    
 }
 
 -(void)loadContentData

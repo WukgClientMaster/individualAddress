@@ -11,6 +11,8 @@
 #import "AnFengTabBarController.h"
 #import "FeatureController.h"
 
+#import <objc/runtime.h>
+
 NSString * const lunch = @"lunch";
 @interface AppDelegate ()
 @end

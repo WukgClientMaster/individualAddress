@@ -4,7 +4,6 @@
 //
 //  Created by anfeng on 17/3/10.
 //  Copyright © 2017年 AnFen. All rights reserved.
-//
 
 #import "SettingCell.h"
 #import "APPItemConfig.h"
@@ -16,14 +15,13 @@
 
 @implementation SettingCell
 
-
 -(UISwitch *)switchItem
 {
     _switchItem = ({
         if (!_switchItem) {
-            _switchItem  = [[UISwitch alloc]initWithFrame:CGRectZero];
+             _switchItem  = [[UISwitch alloc]initWithFrame:CGRectZero];
             [_switchItem addTarget:self action:@selector(changedValue:) forControlEvents:UIControlEventValueChanged];
-            _switchItem.frame = CGRectMake(CGRectGetMidX(self.contentView.frame) + kScreen_Width/3.0f, CGRectGetMinY(self.contentView.frame) + 8, 0, 0);
+             _switchItem.frame = CGRectMake(CGRectGetMidX(self.contentView.frame) + kScreen_Width * 1.2/3.0f, CGRectGetMinY(self.contentView.frame) + 8, 0, 0);
         }
         _switchItem;
     });
@@ -34,16 +32,15 @@
     
 
 }
-
 -(void)buildContentView
 {
     
 }
 -(void)setContentViewStyle
 {
-
+    [super setContentViewStyle];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
 }
-
 -(void)loadContentData
 {
     if (!self.cellData) return;
@@ -62,6 +59,11 @@
     else if ([self.cellData isKindOfClass:[APPItem class]]) {
         APPItem * item = (APPItem*)self.cellData;
         self.textLabel.text = item.title;
+    }
+    else
+    {
+        self.switchItem = nil;
+        self.accessoryType = UITableViewCellAccessoryNone;
     }
 }
 @end

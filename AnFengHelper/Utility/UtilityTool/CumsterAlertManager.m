@@ -39,11 +39,8 @@
             UIAlertActionStyle  actionStyle =  i == _options.count -1  ?  UIAlertActionStyleCancel : UIAlertActionStyleDefault;
             UIAlertAction * action = [UIAlertAction actionWithTitle:_options[i] style:actionStyle handler:^(UIAlertAction * _Nonnull action) {
                 _completeHandleBlock(action);
-                
             }];
-       
             [action setValue:_Color forKey:@"titleTextColor"];
-            
             [_alertController addAction:action];
         }
         _alertController;

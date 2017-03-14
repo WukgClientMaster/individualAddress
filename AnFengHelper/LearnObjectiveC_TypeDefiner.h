@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ProjectAppConfiguration.h"
 
 #define __M_PI 3.1415926
 
@@ -56,7 +57,6 @@
     dispatch_once( &once, ^{ __singleton__ = [[__class alloc] init]; } ); \
     return __singleton__; \
 }
-
 //简单函数宏学习
 #define  SELF(param) [NSString stringWithFormat:@"__testClass :%@",param]
 
@@ -75,6 +75,25 @@
 #define  __NSLogSize(size)  __NSLog(@"%s w:%.4f, h:%.4f", #size, size.width, size.height)
 
 #define  __NSLogPoint(point) __NSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)
+
+
+static inline float  APPAdapterScaleFontFamily(float iphone6FontSize);
+static inline float  APPAdapterScaleFontFamily(float iphone6FontSize)
+{
+    return [UIScreen mainScreen].bounds.size.width / 375.f * iphone6FontSize;
+}
+
+static inline float APPAdapterScaleWith(float iphone6Width);
+static inline float APPAdapterScaleWith(float iphone6Width)
+{
+    return [UIScreen mainScreen].bounds.size.width / 375.f * iphone6Width;
+}
+
+static inline float APPAdapterAdjustHeight(float iphone6Height);
+static inline float APPAdapterAdjustHeight(float iphone6Height)
+{
+    return [UIScreen mainScreen].bounds.size.height / 667.f * iphone6Height;
+}
 
 /*
 NSMutableDictionary * _mutableDictionary;\
@@ -105,9 +124,5 @@ OAOBJECT_INITIALIZE(pointer, pointerObj, void*)
 OAOBJECT_INITIALIZE(weakObj, weakObj, id)
 OAOBJECT_INITIALIZE(assignObj, assignObj, id)
 */
-
-
 @interface LearnObjectiveC_TypeDefiner : NSObject
-
-
 @end
