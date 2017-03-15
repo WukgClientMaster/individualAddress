@@ -1,14 +1,15 @@
 //
 //  RootViewController.m
 //  AnFengHelper
-//
 //  Created by anfeng on 17/3/9.
 //  Copyright © 2017年 AnFen. All rights reserved.
 //
+
 #import "RootViewController.h"
 #import "APPDataBase.h"
 #import "APPResultSet.h"
 #import "APPDataBaseQueue.h"
+#import "HTTPHelper.h"
 
 NSString * loadDBPath();
 NSString * loadDBPath()
@@ -33,6 +34,7 @@ NSString * loadDBPath()
     }
     return @"";
 }
+
 void createTable(NSString*sql1,NSString * sql2);
 void createTable(NSString*sql1,NSString * sql2)
 {
@@ -95,6 +97,7 @@ void queryData(NSString*sql1,NSString * sql2)
         __NSLog(@"error when open db");
     }
 }
+
 void multiThread(NSString*sql1,NSString * sql2);
 void multiThread(NSString*sql1,NSString * sql2)
 {
@@ -142,7 +145,6 @@ void deleteData(NSString* sql1,NSString * sql2)
 @property(nonatomic,strong) UIButton * queryItem;
 @property(nonatomic,strong) UIButton * multiThreadItem;
 @property(nonatomic,strong) NSMutableArray  * items;
-
 @end
 
 @implementation RootViewController
@@ -156,10 +158,9 @@ void deleteData(NSString* sql1,NSString * sql2)
     });
     return _items;
 }
-
 -(void)setObjectView
 {
-    self.view.backgroundColor  = KColor(230, 230, 230);
+    self.view.backgroundColor  = AdapterColor(230, 230, 230);
     NSArray * items = @[@"createtab",@"insert",@"query",@"multiThread",@"delete"];
     for (int i = 0; i < items.count;i++) {
         UIButton * item = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -190,7 +191,6 @@ void deleteData(NSString* sql1,NSString * sql2)
         }];
     }];
 }
-
 -(void)queryFromDB:(UIButton*)sender
 {
     switch (sender.tag) {
@@ -213,9 +213,18 @@ void deleteData(NSString* sql1,NSString * sql2)
             break;
     }
 }
-
 - (void)viewDidLoad {
-      [super viewDidLoad];
-      [self  setObjectView];
+  [super viewDidLoad];
+  [self  setObjectView];
+}
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
+{
+    NSDictionary * params = @{@"username":@"15327102433",@"password":@"123456"};
+    HTTPHelper *  helper = [HTTPHelper shareInstance];
+    [helper postTaskWithPath:@"/api/account/login" params:params success:^(NSString *msg, id response) {
+        
+    } failure:^(NSError *error) {
+        
+    }];
 }
 @end

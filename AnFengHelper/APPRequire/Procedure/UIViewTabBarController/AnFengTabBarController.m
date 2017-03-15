@@ -69,7 +69,7 @@ static dispatch_once_t once;
     [super viewDidLoad];
     [self initSubControllers];
      self.tabBar.barStyle = UIBarStyleBlack;
-     self.tabBar.barTintColor = KColor(230, 230, 230);
+     self.tabBar.barTintColor = AdapterColor(230, 230, 230);
 }
 
 #pragma mark - UITabBarViewController Delegate 

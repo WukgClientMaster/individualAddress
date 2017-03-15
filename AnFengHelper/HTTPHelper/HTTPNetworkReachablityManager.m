@@ -1,134 +1,108 @@
-// AFNetworkReachabilityManager.m
-// Copyright (c) 2011–2015 Alamofire Software Foundation (http://alamofire.org/)
 //
-// Permission is hereby granted, free of charge, to any person obtaining a copy
-// of this software and associated documentation files (the "Software"), to deal
-// in the Software without restriction, including without limitation the rights
-// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-// copies of the Software, and to permit persons to whom the Software is
-// furnished to do so, subject to the following conditions:
+//  HTTPNetworkReachablityManager.m
+//  AnFengHelper
 //
-// The above copyright notice and this permission notice shall be included in
-// all copies or substantial portions of the Software.
-//
-// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-// THE SOFTWARE.
+//  Created by anfeng on 17/3/15.
+//  Copyright © 2017年 AnFen. All rights reserved.
 
-#import "AFNetworkReachabilityManager.h"
-#if !TARGET_OS_WATCH
-
+#import "HTTPNetworkReachablityManager.h"
 #import <netinet/in.h>
 #import <netinet6/in6.h>
 #import <arpa/inet.h>
 #import <ifaddrs.h>
 #import <netdb.h>
 
-NSString * const AFNetworkingReachabilityDidChangeNotification = @"com.alamofire.networking.reachability.change";
-NSString * const AFNetworkingReachabilityNotificationStatusItem = @"AFNetworkingReachabilityNotificationStatusItem";
+NSString * const HTTPNetworkingReachabilityDidChangeNotification = @"com.alamofire.networking.reachability.change";
+NSString * const HTTPNetworkingReachabilityNotificationStatusItem = @"AFNetworkingReachabilityNotificationStatusItem";
 
-typedef void (^AFNetworkReachabilityStatusBlock)(AFNetworkReachabilityStatus status);
+typedef void (^HTTPNetworkReachabilityStatusBlock)(HTTPNetworkabilityStatus status);
 
-NSString * AFStringFromNetworkReachabilityStatus(AFNetworkReachabilityStatus status) {
+NSString * HTTPStringFromNetworkReachabilityStatus(HTTPNetworkabilityStatus status) {
     switch (status) {
-        case AFNetworkReachabilityStatusNotReachable:
+        case HTTPNetworkabilityStatusNotReachable:
             return NSLocalizedStringFromTable(@"Not Reachable", @"AFNetworking", nil);
-        case AFNetworkReachabilityStatusReachableViaWWAN:
+        case HTTPNetworkabilityStatusReachableViaWWAN:
             return NSLocalizedStringFromTable(@"Reachable via WWAN", @"AFNetworking", nil);
-        case AFNetworkReachabilityStatusReachableViaWiFi:
+        case HTTPNetworkabilityStatusReachableViaWiFi:
             return NSLocalizedStringFromTable(@"Reachable via WiFi", @"AFNetworking", nil);
-        case AFNetworkReachabilityStatusUnknown:
+        case HTTPNetworkabilityStatusUnKnown:
         default:
             return NSLocalizedStringFromTable(@"Unknown", @"AFNetworking", nil);
     }
 }
 
-static AFNetworkReachabilityStatus AFNetworkReachabilityStatusForFlags(SCNetworkReachabilityFlags flags) {
+static HTTPNetworkabilityStatus HTTPNetworkReachabilityStatusForFlags(SCNetworkReachabilityFlags flags) {
     BOOL isReachable = ((flags & kSCNetworkReachabilityFlagsReachable) != 0);
     BOOL needsConnection = ((flags & kSCNetworkReachabilityFlagsConnectionRequired) != 0);
     BOOL canConnectionAutomatically = (((flags & kSCNetworkReachabilityFlagsConnectionOnDemand ) != 0) || ((flags & kSCNetworkReachabilityFlagsConnectionOnTraffic) != 0));
     BOOL canConnectWithoutUserInteraction = (canConnectionAutomatically && (flags & kSCNetworkReachabilityFlagsInterventionRequired) == 0);
     BOOL isNetworkReachable = (isReachable && (!needsConnection || canConnectWithoutUserInteraction));
-
-    AFNetworkReachabilityStatus status = AFNetworkReachabilityStatusUnknown;
+    HTTPNetworkabilityStatus status = HTTPNetworkabilityStatusUnKnown;
     if (isNetworkReachable == NO) {
-        status = AFNetworkReachabilityStatusNotReachable;
+        status = HTTPNetworkabilityStatusNotReachable;
     }
 #if	TARGET_OS_IPHONE
     else if ((flags & kSCNetworkReachabilityFlagsIsWWAN) != 0) {
-        status = AFNetworkReachabilityStatusReachableViaWWAN;
+        status = HTTPNetworkabilityStatusReachableViaWWAN;
     }
 #endif
     else {
-        status = AFNetworkReachabilityStatusReachableViaWiFi;
+        status = HTTPNetworkabilityStatusReachableViaWiFi;
     }
-
     return status;
 }
 
-/**
- * Queue a status change notification for the main thread.
- *
- * This is done to ensure that the notifications are received in the same order
- * as they are sent. If notifications are sent directly, it is possible that
- * a queued notification (for an earlier status condition) is processed after
- * the later update, resulting in the listener being left in the wrong state.
- */
-static void AFPostReachabilityStatusChange(SCNetworkReachabilityFlags flags, AFNetworkReachabilityStatusBlock block) {
-    AFNetworkReachabilityStatus status = AFNetworkReachabilityStatusForFlags(flags);
+static void HTTPPostReachabilityStatusChange(SCNetworkReachabilityFlags flags, HTTPNetworkReachabilityStatusBlock block) {
+    HTTPNetworkabilityStatus status = HTTPNetworkReachabilityStatusForFlags(flags);
     dispatch_async(dispatch_get_main_queue(), ^{
         if (block) {
             block(status);
         }
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
-        NSDictionary *userInfo = @{ AFNetworkingReachabilityNotificationStatusItem: @(status) };
-        [notificationCenter postNotificationName:AFNetworkingReachabilityDidChangeNotification object:nil userInfo:userInfo];
+        NSDictionary *userInfo = @{ HTTPNetworkingReachabilityNotificationStatusItem: @(status) };
+        [notificationCenter postNotificationName:HTTPNetworkingReachabilityDidChangeNotification object:nil userInfo:userInfo];
     });
 }
 
-static void AFNetworkReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNetworkReachabilityFlags flags, void *info) {
-    AFPostReachabilityStatusChange(flags, (__bridge AFNetworkReachabilityStatusBlock)info);
+static void HTTPNetworkReachabilityCallback(SCNetworkReachabilityRef __unused target, SCNetworkReachabilityFlags flags, void *info) {
+    HTTPPostReachabilityStatusChange(flags, (__bridge HTTPNetworkReachabilityStatusBlock)info);
 }
 
 
-static const void * AFNetworkReachabilityRetainCallback(const void *info) {
+static const void * HTTPNetworkReachabilityRetainCallback(const void *info) {
     return Block_copy(info);
 }
 
-static void AFNetworkReachabilityReleaseCallback(const void *info) {
+static void HTTPNetworkReachabilityReleaseCallback(const void *info) {
     if (info) {
         Block_release(info);
     }
 }
 
-@interface AFNetworkReachabilityManager ()
+@interface HTTPNetworkReachablityManager ()
 @property (readwrite, nonatomic, strong) id networkReachability;
-@property (readwrite, nonatomic, assign) AFNetworkReachabilityStatus networkReachabilityStatus;
-@property (readwrite, nonatomic, copy) AFNetworkReachabilityStatusBlock networkReachabilityStatusBlock;
+@property (readwrite, nonatomic, assign) HTTPNetworkabilityStatus networkReachabilityStatus;
+@property (readwrite, nonatomic, copy) HTTPNetworkReachabilityStatusBlock networkReachabilityStatusBlock;
+
 @end
 
-@implementation AFNetworkReachabilityManager
-
+@implementation HTTPNetworkReachablityManager
 + (instancetype)sharedManager {
-    static AFNetworkReachabilityManager *_sharedManager = nil;
+    static HTTPNetworkReachablityManager *_sharedManager = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         _sharedManager = [self manager];
     });
-
+    
     return _sharedManager;
 }
 
 #ifndef __clang_analyzer__
 + (instancetype)managerForDomain:(NSString *)domain {
     SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithName(kCFAllocatorDefault, [domain UTF8String]);
-
-    AFNetworkReachabilityManager *manager = [[self alloc] initWithReachability:reachability];
-
+    
+    HTTPNetworkReachablityManager *manager = [[self alloc] initWithReachability:reachability];
+    
     return manager;
 }
 #endif
@@ -136,8 +110,8 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
 #ifndef __clang_analyzer__
 + (instancetype)managerForAddress:(const void *)address {
     SCNetworkReachabilityRef reachability = SCNetworkReachabilityCreateWithAddress(kCFAllocatorDefault, (const struct sockaddr *)address);
-    AFNetworkReachabilityManager *manager = [[self alloc] initWithReachability:reachability];
-
+    HTTPNetworkReachablityManager *manager = [[self alloc] initWithReachability:reachability];
+    
     return manager;
 }
 #endif
@@ -163,10 +137,9 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     if (!self) {
         return nil;
     }
-
     self.networkReachability = CFBridgingRelease(reachability);
-    self.networkReachabilityStatus = AFNetworkReachabilityStatusUnknown;
-
+    self.networkReachabilityStatus = HTTPNetworkabilityStatusUnKnown;
+    
     return self;
 }
 
@@ -186,42 +159,37 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
 }
 
 - (BOOL)isReachableViaWWAN {
-    return self.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWWAN;
+    return self.networkReachabilityStatus == HTTPNetworkabilityStatusReachableViaWWAN;
 }
 
 - (BOOL)isReachableViaWiFi {
-    return self.networkReachabilityStatus == AFNetworkReachabilityStatusReachableViaWiFi;
+    return self.networkReachabilityStatus == HTTPNetworkabilityStatusReachableViaWiFi;
 }
 
 #pragma mark -
-
 - (void)startMonitoring {
     [self stopMonitoring];
-
+    
     if (!self.networkReachability) {
         return;
     }
-
+    
     __weak __typeof(self)weakSelf = self;
-    AFNetworkReachabilityStatusBlock callback = ^(AFNetworkReachabilityStatus status) {
+    HTTPNetworkReachabilityStatusBlock callback = ^(HTTPNetworkabilityStatus status) {
         __strong __typeof(weakSelf)strongSelf = weakSelf;
-
         strongSelf.networkReachabilityStatus = status;
         if (strongSelf.networkReachabilityStatusBlock) {
             strongSelf.networkReachabilityStatusBlock(status);
         }
-
     };
-
     id networkReachability = self.networkReachability;
-    SCNetworkReachabilityContext context = {0, (__bridge void *)callback, AFNetworkReachabilityRetainCallback, AFNetworkReachabilityReleaseCallback, NULL};
-    SCNetworkReachabilitySetCallback((__bridge SCNetworkReachabilityRef)networkReachability, AFNetworkReachabilityCallback, &context);
+    SCNetworkReachabilityContext context = {0, (__bridge void *)callback, HTTPNetworkReachabilityRetainCallback, HTTPNetworkReachabilityReleaseCallback, NULL};
+    SCNetworkReachabilitySetCallback((__bridge SCNetworkReachabilityRef)networkReachability, HTTPNetworkReachabilityCallback, &context);
     SCNetworkReachabilityScheduleWithRunLoop((__bridge SCNetworkReachabilityRef)networkReachability, CFRunLoopGetMain(), kCFRunLoopCommonModes);
-
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0),^{
         SCNetworkReachabilityFlags flags;
         if (SCNetworkReachabilityGetFlags((__bridge SCNetworkReachabilityRef)networkReachability, &flags)) {
-            AFPostReachabilityStatusChange(flags, callback);
+             HTTPPostReachabilityStatusChange(flags, callback);
         }
     });
 }
@@ -230,31 +198,22 @@ static void AFNetworkReachabilityReleaseCallback(const void *info) {
     if (!self.networkReachability) {
         return;
     }
-
     SCNetworkReachabilityUnscheduleFromRunLoop((__bridge SCNetworkReachabilityRef)self.networkReachability, CFRunLoopGetMain(), kCFRunLoopCommonModes);
 }
-
 #pragma mark -
-
 - (NSString *)localizedNetworkReachabilityStatusString {
-    return AFStringFromNetworkReachabilityStatus(self.networkReachabilityStatus);
+    return HTTPStringFromNetworkReachabilityStatus(self.networkReachabilityStatus);
 }
-
 #pragma mark -
-
-- (void)setReachabilityStatusChangeBlock:(void (^)(AFNetworkReachabilityStatus status))block {
+- (void)setReachabilityStatusChangeBlock:(void (^)(HTTPNetworkabilityStatus status))block {
     self.networkReachabilityStatusBlock = block;
 }
-
 #pragma mark - NSKeyValueObserving
-
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
     if ([key isEqualToString:@"reachable"] || [key isEqualToString:@"reachableViaWWAN"] || [key isEqualToString:@"reachableViaWiFi"]) {
         return [NSSet setWithObject:@"networkReachabilityStatus"];
     }
-
     return [super keyPathsForValuesAffectingValueForKey:key];
 }
 
 @end
-#endif

@@ -154,7 +154,7 @@
 }
 
 - (BOOL)nextWithError:(NSError **)outErr {
-    
+        
     int rc = sqlite3_step([_statement statement]);
     
     if (SQLITE_BUSY == rc || SQLITE_LOCKED == rc) {

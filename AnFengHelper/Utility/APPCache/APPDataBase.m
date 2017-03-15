@@ -781,7 +781,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
     }
     
     if (!pStmt) {
-        
         rc = sqlite3_prepare_v2(_db, [sql UTF8String], -1, &pStmt, 0);
         
         if (SQLITE_OK != rc) {
@@ -888,7 +887,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
     
     NSValue *openResultSet = [NSValue valueWithNonretainedObject:rs];
     [_openResultSets addObject:openResultSet];
-    
     [statement setUseCount:[statement useCount] + 1];
     
     FMDBRelease(statement);
@@ -949,7 +947,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
         [self warnInUse];
         return NO;
     }
-    
     _isExecutingStatement = YES;
     
     int rc                   = 0x00;
@@ -1105,7 +1102,6 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
         if (outErr) {
             *outErr = [self errorWithMessage:[NSString stringWithUTF8String:sqlite3_errmsg(_db)]];
         }
-        
         if (SQLITE_ERROR == rc) {
             if (_logsErrors) {
                 NSLog(@"Error calling sqlite3_step (%d: %s) SQLITE_ERROR", rc, sqlite3_errmsg(_db));

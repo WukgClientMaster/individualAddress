@@ -11,8 +11,6 @@
 
 #define __M_PI 3.1415926
 
-#define __kColor(r,g,b,p)[UIColor colorWithRed:r/255.f green:g/255.f blue:b/255.f alpha:p/1.f];
-
 #define __UIColorFromRGB(rgbValue) \
     [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 \
                     green:((float)((rgbValue & 0xFF00) >> 8))/255.0 \

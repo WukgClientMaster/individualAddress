@@ -47,7 +47,6 @@ static dispatch_once_t once;
     });
     return _useingAPPItem;
 }
-
 -(NSMutableArray *)banners
 {
     _banners = ({

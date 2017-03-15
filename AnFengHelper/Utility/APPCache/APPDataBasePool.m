@@ -32,9 +32,7 @@
 }
 
 - (instancetype)initWithPath:(NSString*)aPath flags:(int)openFlags vfs:(NSString *)vfsName {
-    
     self = [super init];
-    
     if (self != nil) {
         _path               = [aPath copy];
         _lockQueue          = dispatch_queue_create([[NSString stringWithFormat:@"fmdb.%@", self] UTF8String], NULL);
@@ -69,7 +67,6 @@
     FMDBRelease(_path);
     FMDBRelease(_databaseInPool);
     FMDBRelease(_databaseOutPool);
-    
     if (_lockQueue) {
         FMDBDispatchQueueRelease(_lockQueue);
         _lockQueue = 0x00;

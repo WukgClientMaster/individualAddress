@@ -25,7 +25,7 @@
             _tableView.delegate   = self;
             _tableView.dataSource = self;
             _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
-            _tableView.separatorColor  = KColor(220, 220, 220);
+            _tableView.separatorColor  = AdapterColor(220, 220, 220);
         }
         _tableView;
     });

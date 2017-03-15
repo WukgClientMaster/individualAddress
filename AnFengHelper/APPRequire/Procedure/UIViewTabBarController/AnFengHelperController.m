@@ -24,9 +24,9 @@
     self.navigationBar.translucent =  NO;
     self.navigationBar.barStyle  = UIBaselineAdjustmentNone;
     [[UINavigationBar appearance]setExclusiveTouch:YES];
-    [[UINavigationBar appearance]setBarTintColor:KColor(230, 230, 230)];
+    [[UINavigationBar appearance]setBarTintColor:AdapterColor(230, 230, 230)];
     NSShadow * shadow = [[NSShadow alloc]init];
-    shadow.shadowColor =  KColor(220, 220, 220);
+    shadow.shadowColor =  AdapterColor(220, 220, 220);
     shadow.shadowOffset = CGSizeMake(1.0, 1.0);
     [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.f],NSShadowAttributeName: shadow,NSForegroundColorAttributeName:[UIColor blackColor]}];
 }

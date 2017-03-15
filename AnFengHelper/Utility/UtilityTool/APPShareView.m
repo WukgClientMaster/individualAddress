@@ -31,7 +31,7 @@
 -(void)setUp
 {
     __weak typeof(self)weakSelf = self;
-    self.backgroundColor = KColor(247, 247, 247);
+    self.backgroundColor = AdapterColor(247, 247, 247);
     NSArray * titles = @[@"微信好友",@"微信朋友圈",@"新浪微博"];
     NSArray * imgs = @[@"forum_wechat",@"forum_wechatCycle",@"forum_sina"];
     for (int i = 0; i < titles.count; i++) {

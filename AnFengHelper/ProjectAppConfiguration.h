@@ -13,18 +13,17 @@
     blue:((float)(rgbValue & 0xFF))/255.0 \
     alpha:(float)1.0]
 
-#define KColor(r,g,b)  [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1.0]
+#define AdapterColor(r,g,b)  [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1.0]
 
 #ifdef  Beta
-#define kSocialHost @"www.baidu.com"
+#define ServletConfigPath   @"http://uapitest.qcwan.com"
 #elif   DEBUG
-#define kSocialHost @"www.bing.com"
+#define ServletConfigPath   @"http://uapitest.qcwan.com"
 #else   //RELEASE
-#define kSocialHost @"www.cocoa.com"
+#define ServletConfigPath   @"http://uapitest.qcwan.com"
 #endif
 
 // 数据请求网络基地址
-#define ServletConfigPath   @"http://120.76.165.119:8080"
 
 //视图frame
 #define kScreen_Height [UIScreen mainScreen].bounds.size.height
@@ -41,9 +40,6 @@
 #define kDevice_Is_iPhone6  ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(750, 1334), [[UIScreen mainScreen] currentMode].size) : NO)
 
 #define kDevice_Is_iPhone6Plus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242, 2208), [[UIScreen mainScreen] currentMode].size) : NO)
-//
-#define kScaleWidth(iphone6Width) [[UIScreen mainScreen] bounds].size.width / 375.f * iphone6Width
-#define kScaleHeight(iphone6Height) [[UIScreen mainScreen] bounds].size.height / 667.f * iphone6Height
 
 //单例模式
 #undef	AS_SINGLETON
