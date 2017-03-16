@@ -58,6 +58,7 @@ static NSString * AFPercentEscapedStringFromString(NSString *string) {
 
 @end
 
+
 @implementation HTTPQueryStringPair
 - (instancetype)initWithField:(id)field value:(id)value {
     self = [super init];
@@ -77,6 +78,7 @@ static NSString * AFPercentEscapedStringFromString(NSString *string) {
     }
 }
 @end
+
 
 FOUNDATION_EXPORT NSArray * AFQueryStringPairsFromDictionary(NSDictionary *dictionary);
 FOUNDATION_EXPORT NSArray * AFQueryStringPairsFromKeyAndValue(NSString *key, id value);
@@ -1039,7 +1041,6 @@ typedef enum {
 }
 
 - (BOOL)hasBytesAvailable {
-    // Allows `read:maxLength:` to be called again if `AFMultipartFormFinalBoundary` doesn't fit into the available buffer
     if (_phase == AFFinalBoundaryPhase) {
         return YES;
     }
@@ -1079,19 +1080,16 @@ typedef enum {
     
     if (_phase == AFBodyPhase) {
         NSInteger numberOfBytesRead = 0;
-        
         numberOfBytesRead = [self.inputStream read:&buffer[totalNumberOfBytesRead] maxLength:(length - (NSUInteger)totalNumberOfBytesRead)];
         if (numberOfBytesRead == -1) {
             return -1;
         } else {
             totalNumberOfBytesRead += numberOfBytesRead;
-            
             if ([self.inputStream streamStatus] >= NSStreamStatusAtEnd) {
                 [self transitionToNextPhase];
             }
         }
     }
-    
     if (_phase == AFFinalBoundaryPhase) {
         NSData *closingBoundaryData = ([self hasFinalBoundary] ? [AFMultipartFormFinalBoundary(self.boundary) dataUsingEncoding:self.stringEncoding] : [NSData data]);
         totalNumberOfBytesRead += [self readData:closingBoundaryData intoBuffer:&buffer[totalNumberOfBytesRead] maxLength:(length - (NSUInteger)totalNumberOfBytesRead)];

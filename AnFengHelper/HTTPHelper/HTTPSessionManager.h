@@ -21,10 +21,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)manager;
 
-- (instancetype)initWithBaseURL:(NSURL *)url;
+- (instancetype)initWithBaseURL:(nullable NSURL *)url;
 
 - (instancetype)initWithBaseURL:(NSURL *)url
-           sessionConfiguration:(NSURLSessionConfiguration *)configuration;
+           sessionConfiguration:(nullable NSURLSessionConfiguration *)configuration;
 
 - (NSURLSessionDataTask *)GET:(NSString *)URLString
                    parameters:( id)parameters

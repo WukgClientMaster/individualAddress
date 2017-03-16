@@ -172,6 +172,9 @@
 		6B8628361E714261006DB9F4 /* UtilitySmoothCurveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8627821E714260006DB9F4 /* UtilitySmoothCurveTool.m */; };
 		6B8628371E714261006DB9F4 /* UtilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8627841E714260006DB9F4 /* UtilityTool.m */; };
 		6B86283B1E7142E8006DB9F4 /* APPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B86283A1E7142E8006DB9F4 /* APPUser.m */; };
+		6BCBC5D71E7A255B00BFC518 /* HTTPQueryPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBC5D61E7A255B00BFC518 /* HTTPQueryPair.m */; settings = {ASSET_TAGS = (); }; };
+		6BCBC5E01E7A831B00BFC518 /* APPUserSystemVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBC5DF1E7A831B00BFC518 /* APPUserSystemVM.m */; settings = {ASSET_TAGS = (); }; };
+		6BCBC5E61E7A837900BFC518 /* APPUserPayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBC5E51E7A837900BFC518 /* APPUserPayVM.m */; settings = {ASSET_TAGS = (); }; };
 		6BD523611E724FD700918160 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B86283C1E714324006DB9F4 /* UIKit.framework */; };
 		6BD523621E724FDE00918160 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B86283F1E714364006DB9F4 /* Foundation.framework */; };
 		6BD5236A1E725A6900918160 /* AnFengHelperController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BD523691E725A6900918160 /* AnFengHelperController.m */; };
@@ -555,6 +558,14 @@
 		6B86283F1E714364006DB9F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B8628421E7145BA006DB9F4 /* ProjectAppConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectAppConfiguration.h; sourceTree = "<group>"; };
 		6B8628431E7145D3006DB9F4 /* LearnObjectiveC_TypeDefiner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnObjectiveC_TypeDefiner.h; sourceTree = "<group>"; };
+		6BCBC5D51E7A255B00BFC518 /* HTTPQueryPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPQueryPair.h; sourceTree = "<group>"; };
+		6BCBC5D61E7A255B00BFC518 /* HTTPQueryPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPQueryPair.m; sourceTree = "<group>"; };
+		6BCBC5DD1E7A82F100BFC518 /* AnFengHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnFengHTTP.h; sourceTree = "<group>"; };
+		6BCBC5DE1E7A831B00BFC518 /* APPUserSystemVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPUserSystemVM.h; sourceTree = "<group>"; };
+		6BCBC5DF1E7A831B00BFC518 /* APPUserSystemVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPUserSystemVM.m; sourceTree = "<group>"; };
+		6BCBC5E41E7A837900BFC518 /* APPUserPayVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPUserPayVM.h; sourceTree = "<group>"; };
+		6BCBC5E51E7A837900BFC518 /* APPUserPayVM.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPUserPayVM.m; sourceTree = "<group>"; };
+		6BCBC5E71E7A8CAF00BFC518 /* HTTPConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPConfig.h; sourceTree = "<group>"; };
 		6BD523681E725A6900918160 /* AnFengHelperController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnFengHelperController.h; sourceTree = "<group>"; };
 		6BD523691E725A6900918160 /* AnFengHelperController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnFengHelperController.m; sourceTree = "<group>"; };
 		6BD5236B1E725A8700918160 /* AnFengTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnFengTabBarController.h; sourceTree = "<group>"; };
@@ -718,6 +729,7 @@
 				6B8628421E7145BA006DB9F4 /* ProjectAppConfiguration.h */,
 				6B8628431E7145D3006DB9F4 /* LearnObjectiveC_TypeDefiner.h */,
 				6BDBEA1D1E7688E3007F5436 /* AnFengSqlite.db */,
+				6BCBC5DB1E7A82BC00BFC518 /* AnFengHelperTool */,
 				6BF4BAE71E78CBF900B32B34 /* HTTPHelper */,
 				6B7CC1D31E714B1E0061C622 /* APPRequire */,
 				6B8625E31E714260006DB9F4 /* NS */,
@@ -1468,6 +1480,19 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		6BCBC5DB1E7A82BC00BFC518 /* AnFengHelperTool */ = {
+			isa = PBXGroup;
+			children = (
+				6BCBC5DD1E7A82F100BFC518 /* AnFengHTTP.h */,
+				6BCBC5E71E7A8CAF00BFC518 /* HTTPConfig.h */,
+				6BCBC5DE1E7A831B00BFC518 /* APPUserSystemVM.h */,
+				6BCBC5DF1E7A831B00BFC518 /* APPUserSystemVM.m */,
+				6BCBC5E41E7A837900BFC518 /* APPUserPayVM.h */,
+				6BCBC5E51E7A837900BFC518 /* APPUserPayVM.m */,
+			);
+			path = AnFengHelperTool;
+			sourceTree = "<group>";
+		};
 		6BD523671E725A3800918160 /* UIViewTabBarController */ = {
 			isa = PBXGroup;
 			children = (
@@ -1711,6 +1736,8 @@
 				6BF4BAF71E78CFCA00B32B34 /* HTTP.h */,
 				6BF4BAE81E78CC1C00B32B34 /* HTTPHelper.h */,
 				6BF4BAE91E78CC1C00B32B34 /* HTTPHelper.m */,
+				6BCBC5D51E7A255B00BFC518 /* HTTPQueryPair.h */,
+				6BCBC5D61E7A255B00BFC518 /* HTTPQueryPair.m */,
 				6BF4BB041E78DA8600B32B34 /* HTTPSecurityPolicy.h */,
 				6BF4BB051E78DA8600B32B34 /* HTTPSecurityPolicy.m */,
 				6BF4BAF81E78D1DC00B32B34 /* HTTPURLSessionManager.h */,
@@ -1820,6 +1847,7 @@
 				6B86278C1E714260006DB9F4 /* NSString+Encryption.m in Sources */,
 				6B8627AE1E714261006DB9F4 /* UIImage+Alpha.m in Sources */,
 				6B8627C31E714261006DB9F4 /* APPNoticeView.m in Sources */,
+				6BCBC5E01E7A831B00BFC518 /* APPUserSystemVM.m in Sources */,
 				6B86282D1E714261006DB9F4 /* OOThread.m in Sources */,
 				6B86279E1E714260006DB9F4 /* EffectTransitionConfig.m in Sources */,
 				6B8628361E714261006DB9F4 /* UtilitySmoothCurveTool.m in Sources */,
@@ -1880,6 +1908,7 @@
 				6BD523BA1E72A75300918160 /* OOTableCell.m in Sources */,
 				6B8627CC1E714261006DB9F4 /* OOAlertView.m in Sources */,
 				6B8628271E714261006DB9F4 /* UIImageView+HighlightedWebCache.m in Sources */,
+				6BCBC5D71E7A255B00BFC518 /* HTTPQueryPair.m in Sources */,
 				6B8628131E714261006DB9F4 /* MJRefreshGifHeader.m in Sources */,
 				6B8628021E714261006DB9F4 /* IQToolbar.m in Sources */,
 				6B86281D1E714261006DB9F4 /* SDImageCache.m in Sources */,
@@ -1977,6 +2006,7 @@
 				6B8627AB1E714261006DB9F4 /* UIButton+CountDown.m in Sources */,
 				6B8627C41E714261006DB9F4 /* APPNotificationEvent.m in Sources */,
 				6B8627C21E714261006DB9F4 /* ActionSheetView.m in Sources */,
+				6BCBC5E61E7A837900BFC518 /* APPUserPayVM.m in Sources */,
 				6B8627D61E714261006DB9F4 /* PolyActivity.m in Sources */,
 				6BF4BB031E78D3EA00B32B34 /* HTTPResponseSerialization.m in Sources */,
 				6BDBEA0F1E764429007F5436 /* APPDataBase.m in Sources */,

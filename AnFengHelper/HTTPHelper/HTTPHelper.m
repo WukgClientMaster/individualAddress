@@ -5,10 +5,57 @@
 //  Created by anfeng on 17/3/15.
 //  Copyright © 2017年 AnFen. All rights reserved.
 
-
 #import <Foundation/Foundation.h>
 #import "HTTPHelper.h"
 #import <objc/runtime.h>
+
+static NSString * const ANFAN_APPID = @"2";
+static NSString * const ANFAN_RETAILERID = @"1";
+static NSString * const DESRSA_PRIVATE_KEY = @"ebe89a4c54f35e59ebe89a4c";
+
+@interface HTTPArgs : NSObject
+
+@property(nonatomic,copy) NSString * _appid;
+@property(nonatomic,copy) NSString * _type;
+@property(nonatomic,copy) NSString * _timestamp;
+@property(nonatomic,copy) NSString * _rid;
+@property(nonatomic,copy) NSString * _sign_type;
+
+@end
+
+static HTTPArgs * _httpArgs = nil;
+static dispatch_once_t onceToken;
+
+@implementation HTTPArgs
+
++(instancetype)shareInstance
+{
+    @synchronized(self) {
+        dispatch_once(&onceToken, ^{
+            if (!_httpArgs) {
+                _httpArgs = [[HTTPArgs alloc]init];
+            }
+            
+        });
+    }
+    return _httpArgs;
+}
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        NSDate * date = [NSDate dateWithTimeIntervalSince1970:1000.f];
+        NSInteger index = [date timeIntervalSinceNow];
+        self._appid = ANFAN_APPID;
+        self._type  = @"json";
+        self._timestamp = [NSString stringWithFormat:@"%@",@(labs(index))];
+        self._rid = ANFAN_RETAILERID;
+        self._sign_type = @"md5";
+    }
+    return self;
+}
+
+@end
 
 static HTTPHelper * _httpHelper = nil;
 static dispatch_once_t  once;
@@ -20,30 +67,25 @@ static dispatch_once_t  once;
 
 @implementation HTTPHelper
 
--(void)setMIMEType:(NSString *)MIMEType
+static NSDictionary * QueryFormateWithParameter(NSDictionary * params)
 {
-    objc_setAssociatedObject(self, @selector(setMIMEType:), MIMEType, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    HTTPArgs * httpArgs = [HTTPArgs shareInstance];
+    NSMutableDictionary * param = [[httpArgs keyValues]mutableCopy];
+    [param addEntriesFromDictionary:params];
+    NSString * pair = [HTTPQueryPair HTTPQueryStringFromParameters:param];
+    NSString * args = [NSString stringWithFormat:@"%@&key=%@",pair,DESRSA_PRIVATE_KEY];
+    [param setValue:args forKey:@"_sign"];
+    return  param;
 }
--(void)setQueryKey:(NSDictionary *)queryKey
-{
-    objc_setAssociatedObject(self, @selector(setQueryKey:), queryKey, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
--(NSString *)MIMEType
-{
-    return  objc_getAssociatedObject(self, @selector(setMIMEType:));
-}
--(NSDictionary *)queryKey
-{
-    return objc_getAssociatedObject(self, @selector(setQueryKey:));
-}
+
 -(HTTPSessionManager *)sessionManager
 {
     if (!_sessionManager) {
         _sessionManager  = [HTTPSessionManager manager];
-        _sessionManager =  [_sessionManager initWithBaseURL:[NSURL URLWithString:ServletConfigPath]];
-        _sessionManager.requestSerializer.timeoutInterval = 10.f;
+        _sessionManager  = [_sessionManager initWithBaseURL:[NSURL URLWithString:ServleteConfigPath]];
+        _sessionManager.requestSerializer.timeoutInterval = 8.f;
         _sessionManager.requestSerializer  = [HTTPRequestSerializer serializer];
-        _sessionManager.responseSerializer = [HTTPResponseSerializer serializer];
+        _sessionManager.responseSerializer = [HTTPJSONResponseSerializer serializer];
     }
     return _sessionManager;
 }
@@ -53,7 +95,7 @@ static dispatch_once_t  once;
     @synchronized(self) {
         dispatch_once(&once, ^{
             if (!_httpHelper) {
-                 _httpHelper = [[HTTPHelper alloc]init];
+                _httpHelper = [[HTTPHelper alloc]init];
             }
         });
     }
@@ -64,34 +106,36 @@ static dispatch_once_t  once;
                  params:(NSDictionary*)params
                 success:(OperationSuccessBlock)success
                 failure:(OperationFailureBlock)failure
+               progress:(OperationProgressBlock)progress
 {
-
+    NSDictionary * args =QueryFormateWithParameter(params);
+    [self.sessionManager GET:path parameters:args progress:^(NSProgress * _Nonnull downloadProgress) {
+        progress(downloadProgress.completedUnitCount / downloadProgress.totalUnitCount);
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nonnull responseObject) {
+        if ([responseObject isKindOfClass:[NSDictionary class]]) {
+            if ([responseObject[@"status"]boolValue] ==0) {
+                success(@"",ooDetailRecursionAboutJson(responseObject));
+            }
+            else
+            {
+                [[OOAlertView shareInstance]pushDialogueType:kDialogueErrorType dialogueText:responseObject[@"msg"]];
+            }
+        }
+    } failure:^(NSURLSessionDataTask * _Nonnull task, NSError * _Nonnull error) {
+        failure(error);
+    }];
 }
 
 - (void)postTaskWithPath:(NSString *)path
                   params:(NSDictionary*)params
                  success:(OperationSuccessBlock)success
                  failure:(OperationFailureBlock)failure
+                progress:(OperationProgressBlock)progress
 {
-    static NSString*  ANFAN_APPID = @"2";
-    static NSString * TDESRSA_PRIVATE_KEY = @"ebe89a4c54f35e59ebe89a4c";
-    static NSString * ANFAN_RETAILERID = @"1";
-    NSString *interval = [NSString stringWithFormat:@"%.0f",[[NSDate date] timeIntervalSince1970]];
-    NSMutableDictionary * param = @{@"_appid":ANFAN_APPID,
-                             @"_type":@"json",
-                             @"_timestamp":interval,
-                             @"_rid":ANFAN_RETAILERID,
-                             @"_sign_type":@"md5"
-                             }.mutableCopy;
-    [param addEntriesFromDictionary:params];
-    NSString * args = [self buildParamString:param];
-    NSString * mutable_args = [NSString stringWithFormat:@"%@&key=%@",args,TDESRSA_PRIVATE_KEY];;
-    NSString * md5_args = [NSString MD5Encryption:mutable_args];
-    [param setValue:md5_args forKey:@"_sign"];
-    [self.sessionManager POST:path parameters:param progress:^(NSProgress * _Nonnull uploadProgress) {
-        
+    NSDictionary * agrs = QueryFormateWithParameter(params);
+    [self.sessionManager POST:path parameters:agrs progress:^(NSProgress * _Nonnull uploadProgress) {
+        progress(uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-       
         if ([responseObject isKindOfClass:[NSDictionary class]]) {
             if ([responseObject[@"status"]boolValue] ==0) {
                 success(@"",ooDetailRecursionAboutJson(responseObject));
@@ -112,7 +156,37 @@ static dispatch_once_t  once;
                failure:(OperationFailureBlock)failure
          uploadProgess:(OperationProgressBlock)progress
 {
+    [self.sessionManager POST:path parameters:nil constructingBodyWithBlock:^(id<HTTPMultipartFormData> formData) {
+        if (files){
+            [files enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * stop) {
+                if ([key isEqualToString:@"file"]) {
+                    NSString * fileName =[NSString stringWithFormat:@"file.jpg"];
+                    [formData appendPartWithFileData:obj name:key fileName:fileName mimeType:@"image/jpeg"];
+                }
+                else
+                {
+                    
+                    NSData * jsonData = [obj dataUsingEncoding:NSUTF8StringEncoding];
+                    [formData appendPartWithFormData:jsonData name:key];
+                }
+            }];
+        }
+    } progress:^(NSProgress * uploadProgress) {
+        
+    } success:^(NSURLSessionDataTask * task, id responseObject) {
+        if ([responseObject[@"status"]boolValue]==0) {
+            
+            success(responseObject[@"msg"],ooDetailRecursionAboutJson(responseObject));
+        }
+        else
+        {
+            [[OOAlertView shareInstance]pushDialogueType:kDialogueErrorType dialogueText:responseObject[@"msg"]];
+        }
+    } failure:^(NSURLSessionDataTask * task, NSError * error) {
+        
+    }];
 
+    
 }
 
 - (void)downloadTaskWith:(NSString *)path
@@ -121,7 +195,25 @@ static dispatch_once_t  once;
                  failure:(OperationFailureBlock)failure
            uploadProgess:(OperationProgressBlock)progress
 {
-
+    HTTPRequestSerializer * serializer = [HTTPRequestSerializer serializer];
+    self.sessionManager.requestSerializer = serializer;
+    NSMutableURLRequest * request =[self.sessionManager.requestSerializer requestWithMethod:@"POST" URLString:[[NSURL URLWithString:path relativeToURL:self.sessionManager.baseURL]absoluteString] parameters:nil error:nil];
+    
+    __block NSURL * appropriateUrl = [NSURL URLWithString:save];
+    
+    NSURLSessionDownloadTask * task = [self.sessionManager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response)
+            {
+                NSURL * documentDirectoryURL = [[NSFileManager defaultManager]URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:appropriateUrl create:NO error:nil];
+                      return [documentDirectoryURL URLByAppendingPathComponent:save];
+                    }completionHandler:^(NSURLResponse *response, NSURL *filePath, NSError *error)
+                    {
+                        success([NSString stringWithFormat:@"%@",response.URL],filePath);
+                }];
+    [self.sessionManager setDownloadTaskDidWriteDataBlock:^(NSURLSession *session, NSURLSessionDownloadTask *downloadTask, int64_t bytesWritten, int64_t totalBytesWritten, int64_t totalBytesExpectedToWrite)
+     {
+         progress(bytesWritten/totalBytesExpectedToWrite);
+     }];
+    [task resume];
 }
 
 static id ooDetailRecursionAboutJson(id object);
@@ -134,22 +226,12 @@ static id ooDetailRecursionAboutJson(id object)
         &&![object isKindOfClass:[NSDictionary class]])
     {
         id  result = object;
-        if ([result isKindOfClass:[NSNumber class]]
-            &&
-            ([result integerValue]==0
-             ||[result floatValue] ==0.0f))
-        {
-            result =@(0);
-        }
-        else if ([result isKindOfClass:[NSNull class]])
+        if ([result isKindOfClass:[NSNull class]])
         {
             result = @"";
         }
-        else  if ([result isKindOfClass:[NSString class]]
-                  &&
-                  (!result
-                   ||[result isEqualToString:@""]
-                   ))
+        else if ([result isKindOfClass:[NSString class]]
+                  &&(!result||[result isEqualToString:@""]))
         {
             result = @"";
         }
@@ -189,46 +271,4 @@ static id ooDetailRecursionAboutJson(id object)
     }
     return filterNullContrainerObject;
 }
-
-
--(NSString *)buildParamString:(NSMutableDictionary *) params{
-    NSArray * keys= [params  allKeys];
-    if(keys.count<1){
-        return @"";
-    }
-    NSSortDescriptor *descriptor = [NSSortDescriptor sortDescriptorWithKey:nil ascending:YES];
-    NSArray *descriptors = [NSArray arrayWithObject:descriptor];
-    NSArray * sortkeys=[keys sortedArrayUsingDescriptors: descriptors];
-    int count=(int)sortkeys.count;
-    NSMutableString * param_string=[[NSMutableString alloc] init];
-    for(int i=0;i<count;i++){
-        NSString * key=sortkeys[i];
-        NSString * value= [params objectForKey:key];
-        [param_string appendFormat:@"%@=%@&",key,[self urlencode: value ]];
-    }
-    NSString * rv=[param_string substringToIndex: (int)param_string.length-1];
-    return rv;
-}
-
--(NSString *) urlencode:(NSString *) str{
-    NSData * data=[str dataUsingEncoding: NSUTF8StringEncoding ];
-    Byte  * bytes =(Byte *)[data bytes];
-    int bytelength=(int)[data length];
-    NSMutableString * arg=[[NSMutableString alloc] init];
-    for(int i=0;i< bytelength;i++){
-        if( (48 <= bytes[i] && bytes[i]<=57) ||
-           (65 <= bytes[i] && bytes[i]<=90) ||
-           (97 <= bytes[i] && bytes[i]<=122) ||
-           bytes[i]=='~' || bytes[i]=='!' || bytes[i]=='*' || bytes[i]=='\'' || bytes[i]=='(' || bytes[i]==')' || bytes[i]=='_'
-           ){
-            [arg appendFormat:@"%c",bytes[i]];
-        }
-        else{
-            [arg appendFormat:@"%%%02x",bytes[i]];
-        }
-    }
-    return  [arg copy];
-}
-
-
 @end

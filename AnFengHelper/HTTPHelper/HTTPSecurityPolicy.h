@@ -15,7 +15,6 @@ typedef NS_ENUM(NSUInteger,HTTPSSLPiningMode)
     HTTPSSLPiningModeCertifivate,
 };
 
-
 @interface HTTPSecurityPolicy : NSObject <NSSecureCoding,NSCopying>
 @property(nonatomic,assign) HTTPSSLPiningMode SSLPinningMode;
 @property(nonatomic,strong,readonly) NSSet <NSData*> *pinnedCertificates;

@@ -9,6 +9,17 @@
 
 @implementation APPSqliteManager
 
++(instancetype)shareInstance;
+{
+    return nil;
+}
 
-
+-(void)executeOpenDB:(NSString*)DBPath;
+{}
+-(void)executeSql:(NSString*)sql;
+{}
+-(instancetype)executeQuerySql:(NSString*)sql;
+{
+    return nil;
+}
 @end

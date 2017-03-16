@@ -19,5 +19,6 @@
 #import "LearnObjectiveC_TypeDefiner.h"
 #import "HTTP.h"
 #import "NSCategory.h"
+#import "AnFengHTTP.h"
 
 #endif

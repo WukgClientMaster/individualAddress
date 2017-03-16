@@ -16,11 +16,11 @@
 #define AdapterColor(r,g,b)  [UIColor colorWithRed:r / 255.0 green:g / 255.0 blue:b / 255.0 alpha:1.0]
 
 #ifdef  Beta
-#define ServletConfigPath   @"http://uapitest.qcwan.com"
+#define ServleteConfigPath   @"http://uapitest.qcwan.com"
 #elif   DEBUG
-#define ServletConfigPath   @"http://uapitest.qcwan.com"
+#define ServleteConfigPath   @"http://uapitest.qcwan.com"
 #else   //RELEASE
-#define ServletConfigPath   @"http://uapitest.qcwan.com"
+#define ServleteConfigPath   @"http://uapitest.qcwan.com"
 #endif
 
 // 数据请求网络基地址

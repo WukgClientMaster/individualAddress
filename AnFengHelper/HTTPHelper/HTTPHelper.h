@@ -14,20 +14,19 @@ typedef void (^OperationProgressBlock)(int64_t progress);
 
 @interface HTTPHelper : NSObject
 
-@property (copy, nonatomic) NSString * MIMEType;
-@property (copy, nonatomic) NSDictionary * queryKey;
-
 +(instancetype)shareInstance;
 
 - (void)getTaskWithPath:(NSString *)path
                         params:(NSDictionary*)params
                        success:(OperationSuccessBlock)success
-                       failure:(OperationFailureBlock)failure;
+                failure:(OperationFailureBlock)failure
+               progress:(OperationProgressBlock)progress;
 
 - (void)postTaskWithPath:(NSString *)path
                          params:(NSDictionary*)params
                         success:(OperationSuccessBlock)success
-                        failure:(OperationFailureBlock)failure;
+                        failure:(OperationFailureBlock)failure
+                       progress:(OperationProgressBlock)progress;
 
 - (void)uploadTaskWith:(NSString *)path
                     fileDatas:(NSDictionary*)files

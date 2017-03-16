@@ -96,7 +96,7 @@ typedef void (^AFURLSessionTaskCompletionHandler)(NSURLResponse *response, id re
 
 @interface HTTPSessionManagerTaskDelegate : NSObject<NSURLSessionTaskDelegate,NSURLSessionDownloadDelegate,NSURLSessionDataDelegate>
 
-@property (nonatomic, weak) HTTPSessionManager *manager;
+@property (nonatomic, strong) HTTPSessionManager *manager;
 @property (nonatomic, strong) NSMutableData *mutableData;
 @property (nonatomic, strong) NSProgress *uploadProgress;
 @property (nonatomic, strong) NSProgress *downloadProgress;
@@ -435,25 +435,20 @@ static NSString * const AFNSURLSessionTaskDidSuspendNotification = @"com.alamofi
 @implementation HTTPURLSessionManager
 -(instancetype)init
 {
-    return [self initWithSessionConfiguration:nil];
+    return (id)[self initWithSessionConfiguration:nil];
 }
 - (instancetype)initWithSessionConfiguration:(NSURLSessionConfiguration *)configuration {
     self = [super init];
     if (!self) {
         return nil;
     }
-    
     if (!configuration) {
         configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
     }
-    
     self.sessionConfiguration = configuration;
-    
     self.operationQueue = [[NSOperationQueue alloc] init];
     self.operationQueue.maxConcurrentOperationCount = 1;
-    
     self.session = [NSURLSession sessionWithConfiguration:self.sessionConfiguration delegate:self delegateQueue:self.operationQueue];
-    
     self.responseSerializer = [HTTPJSONResponseSerializer serializer];
     
     self.securityPolicy = [HTTPSecurityPolicy defaultPolicy];

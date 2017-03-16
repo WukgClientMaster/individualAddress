@@ -25,7 +25,7 @@
 
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
-    return self.interfaceOrientation;
+    return UIInterfaceOrientationPortrait;
 }
 #pragma mark ViewController LifeCycle
 -(void)viewDidLoad

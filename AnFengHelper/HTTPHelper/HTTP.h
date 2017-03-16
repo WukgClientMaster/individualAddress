@@ -12,4 +12,6 @@
 #import "HTTPRequestSerialization.h"
 #import "HTTPResponseSerialization.h"
 #import "HTTPURLSessionManager.h"
+#import "HTTPQueryPair.h"
+
 #endif /* HTTP_h */

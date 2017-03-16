@@ -16,10 +16,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property(nonatomic,strong,readonly) NSURLSession * session;
 @property(nonatomic,strong,readonly) NSOperationQueue * operationQueue;
-@property(nonatomic) id <HTTPURLResponseSerialization> responseSerializer;
+@property(nonatomic,strong) id <HTTPURLResponseSerialization> responseSerializer;
 @property(nonatomic,strong) HTTPSecurityPolicy * securityPolicy;
 @property(nonatomic,strong) HTTPNetworkReachablityManager * reachabilityManager;
-
 
 @property (readonly, nonatomic, strong) NSArray <NSURLSessionTask *> *tasks;
 @property (readonly, nonatomic, strong) NSArray <NSURLSessionDataTask *> *dataTasks;
@@ -32,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, assign) BOOL attemptsToRecreateUploadTasksForBackgroundSessions;
 
-- (instancetype)initWithSessionConfiguration:(NSURLSessionConfiguration *)configuration;
+- (instancetype)initWithSessionConfiguration:(nullable NSURLSessionConfiguration *)configuration;
 - (void)invalidateSessionCancelingTasks:(BOOL)cancelPendingTasks;
 
 - (NSURLSessionDataTask *)dataTaskWithRequest:(NSURLRequest *)request

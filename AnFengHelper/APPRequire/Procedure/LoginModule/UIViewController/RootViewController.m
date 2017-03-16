@@ -9,7 +9,7 @@
 #import "APPDataBase.h"
 #import "APPResultSet.h"
 #import "APPDataBaseQueue.h"
-#import "HTTPHelper.h"
+#import "AnFengHTTP.h"
 
 NSString * loadDBPath();
 NSString * loadDBPath()
@@ -219,12 +219,14 @@ void deleteData(NSString* sql1,NSString * sql2)
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    NSDictionary * params = @{@"username":@"15327102433",@"password":@"123456"};
-    HTTPHelper *  helper = [HTTPHelper shareInstance];
-    [helper postTaskWithPath:@"/api/account/login" params:params success:^(NSString *msg, id response) {
+  
+    [APPUserSystemVM userlogin:@{@"username":@"15327102433",@"password":@"123456"} success:^(NSString *msg, id response) {
         
     } failure:^(NSError *error) {
         
+    } progess:^(int64_t progress) {
+        
     }];
 }
+
 @end
