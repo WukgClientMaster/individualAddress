@@ -24,7 +24,7 @@ NSString * const lunch = @"lunch";
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside  = YES;
     [IQKeyboardManager sharedManager].keyboardDistanceFromTextField = 20.f;
-     self.window.backgroundColor = [UIColor whiteColor];
+     self.window.backgroundColor = [UIColor cyanColor];
     [self.window makeKeyAndVisible];
     if (![[NSUserDefaults standardUserDefaults]objectForKey:lunch]) {
         [[NSUserDefaults standardUserDefaults]setObject:@(1) forKey:lunch];
