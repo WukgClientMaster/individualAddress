@@ -8,24 +8,57 @@
 #import "APPSqliteManager.h"
 
 @implementation APPSqliteManager
-
-+(instancetype)shareInstance;
+/*!
+ *  项目中关于User信息表
+ */
+static NSDictionary * APPSqliteUserOption();
+static NSDictionary * APPSqliteUserOption()
 {
-    return nil;
+    return @{@(APPCacheTbaleNameCreate):@"",
+             @(APPCacheTbaleNameDelete):@"",
+             @(APPCacheTbaleNameInsert):@"",
+             @(APPCacheTbaleNameUpdate):@"",
+             @(APPCacheTbaleNameSelect):@""};
 }
 
--(void)executeOpenDB:(NSString*)DBPath;
+static NSDictionary * APPSqliteInfomationOption();
+static NSDictionary * APPSqliteInfomationOption()
 {
+    return @{@(APPCacheTbaleNameCreate):@"",
+             @(APPCacheTbaleNameDelete):@"",
+             @(APPCacheTbaleNameInsert):@"",
+             @(APPCacheTbaleNameUpdate):@"",
+             @(APPCacheTbaleNameSelect):@""};
 }
 
--(void)executeSql:(NSString*)sql;
+static NSDictionary * APPSqlitePushMsgOption();
+static NSDictionary * APPSqlitePushMsgOption()
 {
-    
+    return @{@(APPCacheTbaleNameCreate):@"",
+             @(APPCacheTbaleNameDelete):@"",
+             @(APPCacheTbaleNameInsert):@"",
+             @(APPCacheTbaleNameUpdate):@"",
+             @(APPCacheTbaleNameSelect):@""};
 }
 
--(instancetype)executeQuerySql:(NSString*)sql;
+static NSString * APPUserAboutTable(APPCacheTbaleNameType type)
 {
-    return nil;
+    NSDictionary * sqlDic = APPSqliteUserOption();
+    return sqlDic[@(type)];
 }
-
+/*!
+ *  项目中关于APPInfo信息表
+ */
+static NSString * APPInfomationAboutTable(APPCacheTbaleNameType type)
+{
+    NSDictionary * sqlDic = APPSqliteInfomationOption();
+    return sqlDic[@(type)];}
+/*!
+ *  项目中关于推送(拉取)信息信息表
+ */
+static NSString * APPPushMsgTable(APPCacheTbaleNameType type)
+{
+    NSDictionary * sqlDic = APPSqlitePushMsgOption();
+    return sqlDic[@(type)];
+}
 @end

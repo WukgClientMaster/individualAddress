@@ -13,14 +13,14 @@
  *
  */
 typedef NS_ENUM(NSInteger,APPCacheTbaleNameType){
-    APPCacheTbaleNameTypeA,
-    APPCacheTbaleNameTypeB,
-    APPCacheTbaleNameTypeC,
-    APPCacheTbaleNameTypeD
+    APPCacheTbaleNameCreate,
+    APPCacheTbaleNameDelete,
+    APPCacheTbaleNameSelect,
+    APPCacheTbaleNameInsert,
+    APPCacheTbaleNameUpdate,
 };
 
 @interface APPSqliteManager : NSObject
-
 /*!
  *  项目中关于User信息表
  */
