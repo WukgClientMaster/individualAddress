@@ -275,13 +275,13 @@
                   symbolName = "-[HTTPURLSessionManager URLSessionDidFinishEventsForBackgroundURLSession:]"
                   moduleName = "AnFengHelper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anfeng/Desktop/AnFengHelper/AnFengHelper/HTTPHelper/HTTPURLSessionManager.m"
-                  timestampString = "511407879.430392"
+                  urlString = "file:///Users/anfeng/Desktop/ios_anfeng_game/AnFengHelper/HTTPHelper/HTTPURLSessionManager.m"
+                  timestampString = "511413994.173882"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1085"
                   endingLineNumber = "1085"
-                  offsetFromSymbolStart = "112">
+                  offsetFromSymbolStart = "108">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -290,13 +290,13 @@
                   symbolName = "__74-[HTTPURLSessionManager URLSessionDidFinishEventsForBackgroundURLSession:]_block_invoke"
                   moduleName = "AnFengHelper"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/anfeng/Desktop/AnFengHelper/AnFengHelper/HTTPHelper/HTTPURLSessionManager.m"
-                  timestampString = "511407879.430519"
+                  urlString = "file:///Users/anfeng/Desktop/ios_anfeng_game/AnFengHelper/HTTPHelper/HTTPURLSessionManager.m"
+                  timestampString = "511413994.174014"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1085"
                   endingLineNumber = "1085"
-                  offsetFromSymbolStart = "24">
+                  offsetFromSymbolStart = "12">
                </Location>
             </Locations>
          </BreakpointContent>
