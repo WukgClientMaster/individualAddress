@@ -248,7 +248,7 @@ static id ooDetailRecursionAboutJson(id object)
         NSMutableArray *filterArray  = [NSMutableArray array];
         [sourceArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop)
          {
-             NSString * filter = ooDetailRecursionAboutJson(obj);
+              NSString * filter = ooDetailRecursionAboutJson(obj);
              [filterArray addObject:filter];
          }];
         filterNullContrainerObject  = filterArray;

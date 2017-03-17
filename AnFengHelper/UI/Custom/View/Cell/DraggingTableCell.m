@@ -30,7 +30,7 @@
 
 -(id)initWithUtilityButtons:(NSArray *)utilityButtons parentCell:(DraggingTableCell *)parentContrainerCell utilityItemSelector:(SEL)utilityItemSelector
 {
-    if (self) {
+    if (self = [super init]) {
         self.utilityItems = utilityButtons;
         self.utilityItemWidth = [self calculateUtilityButtonWidth];
         self.parentContainerCell  = parentContrainerCell;

@@ -276,12 +276,12 @@
                   moduleName = "AnFengHelper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/anfeng/Desktop/AnFengHelper/AnFengHelper/HTTPHelper/HTTPURLSessionManager.m"
-                  timestampString = "511350750.083557"
+                  timestampString = "511407879.430392"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1085"
                   endingLineNumber = "1085"
-                  offsetFromSymbolStart = "108">
+                  offsetFromSymbolStart = "112">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -291,12 +291,12 @@
                   moduleName = "AnFengHelper"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/anfeng/Desktop/AnFengHelper/AnFengHelper/HTTPHelper/HTTPURLSessionManager.m"
-                  timestampString = "511350750.086754"
+                  timestampString = "511407879.430519"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "1085"
                   endingLineNumber = "1085"
-                  offsetFromSymbolStart = "12">
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
          </BreakpointContent>

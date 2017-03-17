@@ -58,7 +58,7 @@ static OOThread * _ooThread = nil;
 
 - (instancetype)initWithTarget:(id)target selector:(SEL)selector object:(id)argument;
 {
-    if ([super init]) {
+    if (self =[super init]) {
         self.target = target;
         self.thread = [[NSThread alloc]initWithTarget:target selector:selector object:argument];
     }

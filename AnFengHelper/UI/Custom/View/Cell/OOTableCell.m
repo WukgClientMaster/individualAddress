@@ -52,7 +52,7 @@
 
 -(instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
-    if ([super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+    if (self=[super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self buildContentView];
         [self setContentViewStyle];
     }

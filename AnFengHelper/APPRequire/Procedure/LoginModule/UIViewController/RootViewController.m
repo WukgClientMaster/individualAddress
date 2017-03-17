@@ -17,7 +17,6 @@ NSString * loadDBPath()
     NSString * bundlepath = [[NSBundle mainBundle]pathForResource:@"AnFengSqlite" ofType:@"db"];
     NSString * documentpath = [[NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject]stringByAppendingPathComponent:@"AnFengSqlite.db"];
     NSFileManager * fileManager = [NSFileManager defaultManager];
-    
     if (![fileManager fileExistsAtPath:documentpath]) {
         NSError * error;
         BOOL res = [fileManager copyItemAtPath:bundlepath toPath:documentpath error:&error];
@@ -42,7 +41,7 @@ void createTable(NSString*sql1,NSString * sql2)
     if ([fileManager fileExistsAtPath:loadDBPath()]) {
         APPDataBase * db = [APPDataBase databaseWithPath:loadDBPath()];
         if ([db open]) {
-             NSString * sql = @"CREATE TABLE 'User' ('id' INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL , 'name' VARCHAR(30), 'password' VARCHAR(30))";
+            NSString * sql = @"CREAT TABLE 'User'('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'name' VARCHAR(30),'password' VARCHAR(30))";
             BOOL res = [db executeUpdate:sql];
             if (!res) {
                 __NSLog(@"error when creating db table");
@@ -56,6 +55,7 @@ void createTable(NSString*sql1,NSString * sql2)
         }
     }
 }
+
 void insertData(NSString*sql1,NSString * sql2);
 void insertData(NSString*sql1,NSString * sql2)
 {
@@ -77,6 +77,7 @@ void insertData(NSString*sql1,NSString * sql2)
         __NSLog(@"error when open db");
     }
 }
+
 void queryData(NSString*sql1,NSString * sql2);
 void queryData(NSString*sql1,NSString * sql2)
 {

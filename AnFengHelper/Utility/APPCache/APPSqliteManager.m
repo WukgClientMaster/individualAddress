@@ -15,11 +15,17 @@
 }
 
 -(void)executeOpenDB:(NSString*)DBPath;
-{}
+{
+}
+
 -(void)executeSql:(NSString*)sql;
-{}
+{
+    
+}
+
 -(instancetype)executeQuerySql:(NSString*)sql;
 {
     return nil;
 }
+
 @end

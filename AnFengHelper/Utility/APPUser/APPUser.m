@@ -7,6 +7,10 @@
 //
 #import "APPUser.h"
 
+@interface APPUser ()
+
+@end
+
 @implementation APPUser
 
 @end

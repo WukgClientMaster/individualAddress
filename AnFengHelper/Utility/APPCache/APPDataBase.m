@@ -1185,7 +1185,8 @@ static int FMDBDatabaseBusyHandler(void *f, int count) {
     return [self executeUpdate:sql error:nil withArgumentsInArray:nil orDictionary:nil orVAList:args];
 }
 
-- (BOOL)executeUpdateWithFormat:(NSString*)format,... {
+- (BOOL)executeUpdateWithFormat:(NSString*)format,...
+{
     va_list args;
     va_start(args, format);
     
@@ -1496,6 +1497,4 @@ void FMDBBlockSQLiteCallBackFunction(sqlite3_context *context, int argc, sqlite3
 - (NSString*)description {
     return [NSString stringWithFormat:@"%@ %ld hit(s) for query %@", [super description], _useCount, _query];
 }
-
-
 @end

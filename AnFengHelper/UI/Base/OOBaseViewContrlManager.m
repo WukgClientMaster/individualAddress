@@ -14,7 +14,7 @@ DEF_SINGLETON(OOBaseViewContrlManager)
 
 -(OOBaseTabBarController*)loadControllerWithType;
 {
-    dispatch_once_t  once;
+    static dispatch_once_t  once;
     dispatch_once(&once, ^{
         _tabBarController = [[OOBaseTabBarController alloc]init];
     });
