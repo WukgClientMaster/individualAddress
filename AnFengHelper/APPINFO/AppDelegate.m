@@ -4,28 +4,25 @@
 //
 //  Created by anfeng on 17/3/9.
 //  Copyright (c) 2017年 AnFen. All rights reserved.
-//
 
 #import "AppDelegate.h"
 #import "IQKeyboardManager.h"
 #import "AnFengTabBarController.h"
 #import "FeatureController.h"
-
 #import <objc/runtime.h>
 
 NSString * const lunch = @"lunch";
 @interface AppDelegate ()
 @end
-@implementation AppDelegate
 
+@implementation AppDelegate
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     [IQKeyboardManager sharedManager].enableAutoToolbar = YES;
     [IQKeyboardManager sharedManager].enable = YES;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside  = YES;
     [IQKeyboardManager sharedManager].keyboardDistanceFromTextField = 20.f;
-     self.window.backgroundColor = [UIColor cyanColor];
-    NSLog(@"wvf");
+     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     if (![[NSUserDefaults standardUserDefaults]objectForKey:lunch]) {
         [[NSUserDefaults standardUserDefaults]setObject:@(1) forKey:lunch];

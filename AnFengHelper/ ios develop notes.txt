@@ -13,7 +13,7 @@
 #pragma mark ViewController LifeCycle
 - (void)viewDidLoad 
 #pragma mark ViewController AsynRequestData
- -(void)accountInfoAsynRequest;
+-(void)accountInfoAsynRequest;
 
 #pragma mark ViewController Algorithm Processor
 - (void) reverseSourceData:(id)parameter;

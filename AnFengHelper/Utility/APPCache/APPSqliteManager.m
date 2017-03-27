@@ -14,17 +14,17 @@
 static NSDictionary * APPSqliteUserOption();
 static NSDictionary * APPSqliteUserOption()
 {
-    return @{@(APPCacheTbaleNameCreate):@"",
-             @(APPCacheTbaleNameDelete):@"",
-             @(APPCacheTbaleNameInsert):@"",
-             @(APPCacheTbaleNameUpdate):@"",
-             @(APPCacheTbaleNameSelect):@""};
+    return @{@(APPCacheTbaleNameCreate):@"CREAT TABLE 'User'('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'name' VARCHAR(30),'password' VARCHAR(30))",
+             @(APPCacheTbaleNameDelete):@"delete from User",
+             @(APPCacheTbaleNameInsert):@"insert into User (name, password) values(?, ?)",
+             @(APPCacheTbaleNameUpdate):@"UPDATE User SET name = 'name_user',password ='password' WHERE id = 1",
+             @(APPCacheTbaleNameSelect):@"select * from User"};
 }
 
 static NSDictionary * APPSqliteInfomationOption();
 static NSDictionary * APPSqliteInfomationOption()
 {
-    return @{@(APPCacheTbaleNameCreate):@"",
+    return @{@(APPCacheTbaleNameCreate):@"CREAT TABLE 'appinfo'('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'appid' VARCHAR(100),'app_content' VARCHAR((100))",
              @(APPCacheTbaleNameDelete):@"",
              @(APPCacheTbaleNameInsert):@"",
              @(APPCacheTbaleNameUpdate):@"",
@@ -34,14 +34,14 @@ static NSDictionary * APPSqliteInfomationOption()
 static NSDictionary * APPSqlitePushMsgOption();
 static NSDictionary * APPSqlitePushMsgOption()
 {
-    return @{@(APPCacheTbaleNameCreate):@"",
+    return @{@(APPCacheTbaleNameCreate):@"CREAT TABLE 'user_msg'('id' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,'msg_title' VARCHAR(100),'msg_content' VARCHAR((100))",
              @(APPCacheTbaleNameDelete):@"",
              @(APPCacheTbaleNameInsert):@"",
              @(APPCacheTbaleNameUpdate):@"",
              @(APPCacheTbaleNameSelect):@""};
 }
 
-static NSString * APPUserAboutTable(APPCacheTbaleNameType type)
+NSString * APPUserAboutTable(APPCacheTbaleNameType type)
 {
     NSDictionary * sqlDic = APPSqliteUserOption();
     return sqlDic[@(type)];
@@ -49,14 +49,15 @@ static NSString * APPUserAboutTable(APPCacheTbaleNameType type)
 /*!
  *  项目中关于APPInfo信息表
  */
-static NSString * APPInfomationAboutTable(APPCacheTbaleNameType type)
+NSString * APPInfomationAboutTable(APPCacheTbaleNameType type)
 {
     NSDictionary * sqlDic = APPSqliteInfomationOption();
-    return sqlDic[@(type)];}
+    return sqlDic[@(type)];
+}
 /*!
  *  项目中关于推送(拉取)信息信息表
  */
-static NSString * APPPushMsgTable(APPCacheTbaleNameType type)
+NSString * APPPushMsgTable(APPCacheTbaleNameType type)
 {
     NSDictionary * sqlDic = APPSqlitePushMsgOption();
     return sqlDic[@(type)];

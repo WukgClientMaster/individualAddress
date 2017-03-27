@@ -77,6 +77,7 @@ static dispatch_once_t once;
     });
     return _scrollView;
 }
+
 -(BOOL)prefersStatusBarHidden
 {
     return YES;

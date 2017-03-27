@@ -6,10 +6,7 @@
 //
 
 #import "RootViewController.h"
-#import "APPDataBase.h"
-#import "APPResultSet.h"
-#import "APPDataBaseQueue.h"
-#import "AnFengHTTP.h"
+#import "APPDB.h"
 
 NSString * loadDBPath();
 NSString * loadDBPath()
@@ -33,7 +30,6 @@ NSString * loadDBPath()
     }
     return @"";
 }
-
 void createTable(NSString*sql1,NSString * sql2);
 void createTable(NSString*sql1,NSString * sql2)
 {
@@ -55,7 +51,6 @@ void createTable(NSString*sql1,NSString * sql2)
         }
     }
 }
-
 void insertData(NSString*sql1,NSString * sql2);
 void insertData(NSString*sql1,NSString * sql2)
 {
@@ -77,7 +72,6 @@ void insertData(NSString*sql1,NSString * sql2)
         __NSLog(@"error when open db");
     }
 }
-
 void queryData(NSString*sql1,NSString * sql2);
 void queryData(NSString*sql1,NSString * sql2)
 {
@@ -98,7 +92,6 @@ void queryData(NSString*sql1,NSString * sql2)
         __NSLog(@"error when open db");
     }
 }
-
 void multiThread(NSString*sql1,NSString * sql2);
 void multiThread(NSString*sql1,NSString * sql2)
 {
@@ -220,14 +213,10 @@ void deleteData(NSString* sql1,NSString * sql2)
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-  
     [APPUserSystemVM userlogin:@{@"username":@"15327102433",@"password":@"123456"} success:^(NSString *msg, id response) {
         
     } failure:^(NSError *error) {
-        
     } progess:^(int64_t progress) {
-        
     }];
 }
-
 @end

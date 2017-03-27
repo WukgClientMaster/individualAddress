@@ -5,7 +5,6 @@
 //  Created by anfeng on 17/3/10.
 //  Copyright © 2017年 AnFen. All rights reserved.
 //
-
 #import "LoginViewController.h"
 #import "RootViewController.h"
 
@@ -28,7 +27,6 @@
 
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
 {
-    [self.navigationController pushViewController:self.rootViewController animated:YES];
 }
 
 - (void)viewDidLoad {

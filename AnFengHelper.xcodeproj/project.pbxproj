@@ -10,9 +10,6 @@
 		6B7CC1D21E714AC00061C622 /* BMPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC1D11E714AC00061C622 /* BMPopView.m */; };
 		6B7CC2231E715E380061C622 /* FeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC2221E715E380061C622 /* FeatureController.m */; };
 		6B8625BE1E713F35006DB9F4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8625BD1E713F35006DB9F4 /* main.m */; };
-		6B8625C11E713F35006DB9F4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8625C01E713F35006DB9F4 /* AppDelegate.m */; };
-		6B8625C91E713F35006DB9F4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B8625C81E713F35006DB9F4 /* Images.xcassets */; };
-		6B8625CC1E713F35006DB9F4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B8625CA1E713F35006DB9F4 /* LaunchScreen.xib */; };
 		6B8627851E714260006DB9F4 /*  ios develop notes.txt in Resources */ = {isa = PBXBuildFile; fileRef = 6B8625E11E714260006DB9F4 /*  ios develop notes.txt */; };
 		6B8627861E714260006DB9F4 /* NSArray+Query.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8625E61E714260006DB9F4 /* NSArray+Query.m */; };
 		6B8627871E714260006DB9F4 /* NSDictionary+NSData.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8625E81E714260006DB9F4 /* NSDictionary+NSData.m */; };
@@ -172,6 +169,7 @@
 		6B8628361E714261006DB9F4 /* UtilitySmoothCurveTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8627821E714260006DB9F4 /* UtilitySmoothCurveTool.m */; };
 		6B8628371E714261006DB9F4 /* UtilityTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B8627841E714260006DB9F4 /* UtilityTool.m */; };
 		6B86283B1E7142E8006DB9F4 /* APPUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B86283A1E7142E8006DB9F4 /* APPUser.m */; };
+		6B9C849B1E7FA75A00E91801 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B9C849A1E7FA75A00E91801 /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		6BCBC5D71E7A255B00BFC518 /* HTTPQueryPair.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBC5D61E7A255B00BFC518 /* HTTPQueryPair.m */; settings = {ASSET_TAGS = (); }; };
 		6BCBC5E01E7A831B00BFC518 /* APPUserSystemVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBC5DF1E7A831B00BFC518 /* APPUserSystemVM.m */; settings = {ASSET_TAGS = (); }; };
 		6BCBC5E61E7A837900BFC518 /* APPUserPayVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCBC5E51E7A837900BFC518 /* APPUserPayVM.m */; settings = {ASSET_TAGS = (); }; };
@@ -209,6 +207,7 @@
 		6BF4BB091E78E22700B32B34 /* HTTPNetworkReachablityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF4BB081E78E22700B32B34 /* HTTPNetworkReachablityManager.m */; };
 		6BF4BB0B1E792B6000B32B34 /* HTTPHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF4BAE91E78CC1C00B32B34 /* HTTPHelper.m */; };
 		6BF4BB0C1E792DE500B32B34 /* HTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BF4BAFC1E78D23900B32B34 /* HTTPSessionManager.m */; };
+		6BFAFE751E88E95A009DE068 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6BFAFE741E88E95A009DE068 /* Images.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -218,10 +217,6 @@
 		6B8625B81E713F35006DB9F4 /* AnFengHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnFengHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B8625BC1E713F35006DB9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B8625BD1E713F35006DB9F4 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6B8625BF1E713F35006DB9F4 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		6B8625C01E713F35006DB9F4 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		6B8625C81E713F35006DB9F4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		6B8625CB1E713F35006DB9F4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6B8625D61E713F35006DB9F4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B8625D71E713F35006DB9F4 /* AnFengHelperTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnFengHelperTests.m; sourceTree = "<group>"; };
 		6B8625E11E714260006DB9F4 /*  ios develop notes.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = " ios develop notes.txt"; sourceTree = "<group>"; };
@@ -558,6 +553,8 @@
 		6B86283F1E714364006DB9F4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6B8628421E7145BA006DB9F4 /* ProjectAppConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectAppConfiguration.h; sourceTree = "<group>"; };
 		6B8628431E7145D3006DB9F4 /* LearnObjectiveC_TypeDefiner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LearnObjectiveC_TypeDefiner.h; sourceTree = "<group>"; };
+		6B9C84991E7FA75A00E91801 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6B9C849A1E7FA75A00E91801 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		6BCBC5D51E7A255B00BFC518 /* HTTPQueryPair.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPQueryPair.h; sourceTree = "<group>"; };
 		6BCBC5D61E7A255B00BFC518 /* HTTPQueryPair.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPQueryPair.m; sourceTree = "<group>"; };
 		6BCBC5DD1E7A82F100BFC518 /* AnFengHTTP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnFengHTTP.h; sourceTree = "<group>"; };
@@ -632,6 +629,7 @@
 		6BF4BB071E78E22700B32B34 /* HTTPNetworkReachablityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPNetworkReachablityManager.h; sourceTree = "<group>"; };
 		6BF4BB081E78E22700B32B34 /* HTTPNetworkReachablityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPNetworkReachablityManager.m; sourceTree = "<group>"; };
 		6BF4BB0A1E7924EE00B32B34 /* NSCategory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSCategory.h; sourceTree = "<group>"; };
+		6BFAFE741E88E95A009DE068 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -729,16 +727,13 @@
 				6B8628421E7145BA006DB9F4 /* ProjectAppConfiguration.h */,
 				6B8628431E7145D3006DB9F4 /* LearnObjectiveC_TypeDefiner.h */,
 				6BDBEA1D1E7688E3007F5436 /* AnFengSqlite.db */,
+				6B9C84981E7FA75A00E91801 /* APPINFO */,
 				6BCBC5DB1E7A82BC00BFC518 /* AnFengHelperTool */,
 				6BF4BAE71E78CBF900B32B34 /* HTTPHelper */,
 				6B7CC1D31E714B1E0061C622 /* APPRequire */,
 				6B8625E31E714260006DB9F4 /* NS */,
 				6B8625FF1E714260006DB9F4 /* UI */,
 				6B8626A01E714260006DB9F4 /* Utility */,
-				6B8625BF1E713F35006DB9F4 /* AppDelegate.h */,
-				6B8625C01E713F35006DB9F4 /* AppDelegate.m */,
-				6B8625C81E713F35006DB9F4 /* Images.xcassets */,
-				6B8625CA1E713F35006DB9F4 /* LaunchScreen.xib */,
 				6B86283E1E71434B006DB9F4 /* Framework */,
 				6B8625BB1E713F35006DB9F4 /* Supporting Files */,
 			);
@@ -748,6 +743,7 @@
 		6B8625BB1E713F35006DB9F4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6BFAFE741E88E95A009DE068 /* Images.xcassets */,
 				6B8625BC1E713F35006DB9F4 /* Info.plist */,
 				6B8625BD1E713F35006DB9F4 /* main.m */,
 			);
@@ -1480,6 +1476,15 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		6B9C84981E7FA75A00E91801 /* APPINFO */ = {
+			isa = PBXGroup;
+			children = (
+				6B9C84991E7FA75A00E91801 /* AppDelegate.h */,
+				6B9C849A1E7FA75A00E91801 /* AppDelegate.m */,
+			);
+			path = APPINFO;
+			sourceTree = "<group>";
+		};
 		6BCBC5DB1E7A82BC00BFC518 /* AnFengHelperTool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1813,11 +1818,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BDBEA1E1E7688E3007F5436 /* AnFengSqlite.db in Resources */,
-				6B8625CC1E713F35006DB9F4 /* LaunchScreen.xib in Resources */,
 				6B8627851E714260006DB9F4 /*  ios develop notes.txt in Resources */,
+				6BFAFE751E88E95A009DE068 /* Images.xcassets in Resources */,
 				6B8628041E714261006DB9F4 /* IQKeyboardManager.bundle in Resources */,
 				6B86280E1E714261006DB9F4 /* MJRefresh.bundle in Resources */,
-				6B8625C91E713F35006DB9F4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1855,7 +1859,6 @@
 				6B8627D31E714261006DB9F4 /* OOWebViewController.m in Sources */,
 				6BD523BD1E72AA8E00918160 /* SettingCell.m in Sources */,
 				6B8628141E714261006DB9F4 /* MJRefreshHeader.m in Sources */,
-				6B8625C11E713F35006DB9F4 /* AppDelegate.m in Sources */,
 				6BD523981E725D0000918160 /* MoreViewController.m in Sources */,
 				6B8627981E714260006DB9F4 /* HUTransitionVerticalLinesAnimator.m in Sources */,
 				6B8627DC1E714261006DB9F4 /* AppCacheManager.m in Sources */,
@@ -1955,6 +1958,7 @@
 				6B8627A31E714260006DB9F4 /* OOBaseViewContrlManager.m in Sources */,
 				6B86283B1E7142E8006DB9F4 /* APPUser.m in Sources */,
 				6B8627BD1E714261006DB9F4 /* SDPhotoBrowser.m in Sources */,
+				6B9C849B1E7FA75A00E91801 /* AppDelegate.m in Sources */,
 				6B8628011E714261006DB9F4 /* IQTitleBarButtonItem.m in Sources */,
 				6B8627AF1E714261006DB9F4 /* UIImage+Effect.m in Sources */,
 				6B86279B1E714260006DB9F4 /* PopUpModelTransition.m in Sources */,
@@ -2026,22 +2030,13 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		6B8625CA1E713F35006DB9F4 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6B8625CB1E713F35006DB9F4 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		6B8625D91E713F35006DB9F4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPLAY_NAME = AnFen_Debug;
+				BUNDLE_IDENTIFIER = com.anfeng.debug.com;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2079,7 +2074,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = mh_execute;
-				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -2089,7 +2083,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = AN_Debug;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
@@ -2098,7 +2093,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AnFeng.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2110,6 +2105,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPLAY_NAME = AnFen_Beta;
+				BUNDLE_IDENTIFIER = com.anfeng.beta.com;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2146,7 +2143,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = mh_execute;
-				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -2156,7 +2152,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = AN_Beta;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
@@ -2165,7 +2162,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AnFeng.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2177,6 +2174,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				APP_DISPLAY_NAME = AnFen_Release;
+				BUNDLE_IDENTIFIER = com.anfeng.release.com;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -2211,7 +2210,6 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACH_O_TYPE = mh_execute;
-				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -2221,7 +2219,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				APP_DISPLAY_NAME = AN_Debug;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
@@ -2231,7 +2230,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "AnFeng.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";

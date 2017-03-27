@@ -24,14 +24,14 @@ typedef NS_ENUM(NSInteger,APPCacheTbaleNameType){
 /*!
  *  项目中关于User信息表
  */
-static NSString * APPUserAboutTable(APPCacheTbaleNameType type);
+NSString * APPUserAboutTable(APPCacheTbaleNameType type);
 /*!
  *  项目中关于APPInfo信息表
  */
-static NSString * APPInfomationAboutTable(APPCacheTbaleNameType type);
+NSString * APPInfomationAboutTable(APPCacheTbaleNameType type);
 /*!
  *  项目中关于推送(拉取)信息信息表
  */
-static NSString * APPPushMsgTable(APPCacheTbaleNameType type);
+NSString * APPPushMsgTable(APPCacheTbaleNameType type);
 
 @end

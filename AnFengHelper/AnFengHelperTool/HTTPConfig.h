@@ -12,7 +12,7 @@
 
 /*!
  * AnFengHelper
- *    1.用户系统，所有“query”地址
+ * 1.用户系统，所有“query”地址
  */
 static NSString * ANFENG_ACCOUNT_REGISTER = @"/api/account/register";
 static NSString * ANFENG_QUICK_CREATE_ACCOUNT = @"/api/account/username";
@@ -37,7 +37,7 @@ static NSString * ANFENG_LOGINOUT = @"/api/user/logout";
 
 /*!
  * AnFengHelper
- *    2.支付系统，所有“query”地址
+ * 2.支付系统，所有“query”地址
  */
 static NSString * ANFENG_NEW_ORDER = @"api/pay/order/new";
 static NSString * ANFENG_NEW_PLATFORM_ORDER = @"api/pay/order/anfeng/new";

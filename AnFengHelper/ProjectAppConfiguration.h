@@ -24,7 +24,6 @@
 #endif
 
 // 数据请求网络基地址
-
 //视图frame
 #define kScreen_Height [UIScreen mainScreen].bounds.size.height
 #define kScreen_Width  [UIScreen mainScreen].bounds.size.width
