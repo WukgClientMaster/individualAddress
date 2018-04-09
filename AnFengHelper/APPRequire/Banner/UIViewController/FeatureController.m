@@ -21,8 +21,7 @@ static dispatch_once_t once;
 
 @implementation FeatureController
 
-+(instancetype)shareInstance;
-{
++(instancetype)shareInstance{
     @synchronized(self) {
         dispatch_once(&once, ^{
             if (!_featureController) {
@@ -32,8 +31,8 @@ static dispatch_once_t once;
     };
     return _featureController;
 }
--(UIButton *)useingAPPItem
-{
+
+-(UIButton *)useingAPPItem{
     _useingAPPItem = ({
         if (!_useingAPPItem) {
             _useingAPPItem  = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -47,8 +46,8 @@ static dispatch_once_t once;
     });
     return _useingAPPItem;
 }
--(NSMutableArray *)banners
-{
+
+-(NSMutableArray *)banners{
     _banners = ({
         if (!_banners) {
              _banners = [NSMutableArray array];
@@ -61,8 +60,7 @@ static dispatch_once_t once;
     return _banners;
 }
 
--(UIScrollView *)scrollView
-{
+-(UIScrollView *)scrollView{
     _scrollView = ({
         if (!_scrollView) {
             _scrollView = [[UIScrollView alloc]initWithFrame:[UIScreen mainScreen].bounds];
@@ -78,13 +76,11 @@ static dispatch_once_t once;
     return _scrollView;
 }
 
--(BOOL)prefersStatusBarHidden
-{
+-(BOOL)prefersStatusBarHidden{
     return YES;
 }
 
--(void)setObjectView
-{
+-(void)setObjectView{
      self.scrollView.contentSize = CGSizeMake(kScreen_Width * self.banners.count,kScreen_Height);
     [self.view addSubview:self.scrollView];
      for (int i = 0; i < self.banners.count; i++) {
@@ -95,6 +91,8 @@ static dispatch_once_t once;
          imageView.userInteractionEnabled = YES;
          if (i == self.banners.count -1) {
              self.useingAPPItem.frame = CGRectMake(CGRectGetMidX(self.view.frame) -kScreen_Width/6.0f, CGRectGetHeight(self.view.frame) - kScreen_Width/4.0f, kScreen_Width/3.0f, 30.0f),
+             self.useingAPPItem.layer.masksToBounds = YES;
+             self.useingAPPItem.layer.cornerRadius  = APPAdapterAdjustHeight(8.f);
              [imageView addSubview:self.useingAPPItem];
          }
      }
@@ -106,12 +104,10 @@ static dispatch_once_t once;
 }
 
 #pragma mark -UIScrollView Delegate
--(void)scrollViewDidScroll:(UIScrollView *)scrollView
-{
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 }
 
--(void)useingAPP:(id)sender
-{
+-(void)useingAPP:(id)sender{
     AnFengTabBarController * anFengTabBarController = [AnFengTabBarController shareInstance];
     [UIApplication sharedApplication].keyWindow.rootViewController = anFengTabBarController;
 }

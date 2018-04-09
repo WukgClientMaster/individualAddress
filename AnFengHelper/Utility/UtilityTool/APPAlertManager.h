@@ -9,8 +9,6 @@
 #import <Foundation/Foundation.h>
 typedef void(^AppAlertCompleteHandleBlock)(UIAlertAction* action);
 
-
-
 @interface APPAlertManager : NSObject
 
 @property (strong, nonatomic) UIColor * Color;

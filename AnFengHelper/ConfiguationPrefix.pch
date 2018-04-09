@@ -21,5 +21,6 @@
 #import "HTTP.h"
 #import "NSCategory.h"
 #import "AnFengHTTP.h"
+#import "APPTextField.h"
 
 #endif

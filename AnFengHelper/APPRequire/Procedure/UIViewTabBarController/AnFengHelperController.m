@@ -28,7 +28,7 @@
     NSShadow * shadow = [[NSShadow alloc]init];
     shadow.shadowColor =  AdapterColor(220, 220, 220);
     shadow.shadowOffset = CGSizeMake(1.0, 1.0);
-    [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:14.f],NSShadowAttributeName: shadow,NSForegroundColorAttributeName:[UIColor blackColor]}];
+    [[UINavigationBar appearance]setTitleTextAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:18.f],NSShadowAttributeName: shadow,NSForegroundColorAttributeName:AdapterColor(44, 128, 245)}];
 }
 
 static bool pushConditionJudeMent(UIViewController * viewController);
@@ -45,17 +45,15 @@ static bool pushConditionJudeMent(UIViewController * viewController)
 }
 
 #pragma mark -UINavigationControllerDelegate
--(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
-{
-    viewController.navigationController.interactivePopGestureRecognizer.enabled = YES;
-    viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
+-(void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated{
+  viewController.navigationController.interactivePopGestureRecognizer.enabled = YES;
+ viewController.navigationController.interactivePopGestureRecognizer.delegate = self;
     if (pushConditionJudeMent(viewController)) {
         viewController.hidesBottomBarWhenPushed = NO;
     }else viewController.hidesBottomBarWhenPushed = YES;
     [super pushViewController:viewController animated:animated];
 }
-- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated;
-{
+- (void)navigationController:(UINavigationController *)navigationController willShowViewController:(UIViewController *)viewController animated:(BOOL)animated{
 
 }
 - (void)navigationController:(UINavigationController *)navigationController didShowViewController:(UIViewController *)viewController animated:(BOOL)animated;

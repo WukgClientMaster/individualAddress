@@ -13,7 +13,7 @@
 @interface OOTableCell : UITableViewCell
 
 @property(nonatomic,strong) CellAdapter * cellAdapter;
-@property(nonatomic,strong) id cellData;
+@property(nonatomic,strong) id  cellData;
 
 +(instancetype)cellReuseWith:(UITableView*)tableView reuseIndefiner:(NSString*)indefiner;
 

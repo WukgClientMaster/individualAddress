@@ -9,5 +9,5 @@
 #import "APPItem.h"
 
 @interface APPSwitchItem : APPItem
-
+@property (copy, nonatomic) NSString * onOff;
 @end

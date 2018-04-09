@@ -12,7 +12,6 @@
 
 +(instancetype)initializeWithItems:(NSArray*)items header:(NSString*)header footer:(NSString*)footer;
 {
-    
     APPGroup * group = [[APPGroup alloc]init];
     group.items = items;
     group.header = header;

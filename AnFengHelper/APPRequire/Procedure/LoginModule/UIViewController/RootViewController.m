@@ -212,11 +212,12 @@ void deleteData(NSString* sql1,NSString * sql2)
   [self  setObjectView];
 }
 -(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event
-{
+{   /*
     [APPUserSystemVM userlogin:@{@"username":@"15327102433",@"password":@"123456"} success:^(NSString *msg, id response) {
         
     } failure:^(NSError *error) {
     } progess:^(int64_t progress) {
     }];
+    */
 }
 @end

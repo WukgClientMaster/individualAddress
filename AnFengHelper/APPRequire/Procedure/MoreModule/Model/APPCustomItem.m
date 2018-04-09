@@ -9,7 +9,6 @@
 #import "APPCustomItem.h"
 @implementation APPCustomItem
 
-
 +(instancetype)initializeWithImg:(NSString*)img title:(NSString*)title subtitle:(NSString*)subtitle block:(OperationBlock)block;
 {
     APPCustomItem * item = [self initializeWithImg:img title:title subtitle:subtitle];

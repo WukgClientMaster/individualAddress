@@ -58,13 +58,14 @@ static dispatch_once_t once;
     AnFengHelperController * gameHelpNavigationController = [[AnFengHelperController alloc]initWithRootViewController:gameHlepViewController];
     //
     MoreViewController * moreViewController = [[MoreViewController alloc]init];
-    moreViewController.title = @"more";
+    moreViewController.title = @"个性化设置";
     moreViewController.tabBarItem = [[UITabBarItem alloc]initWithTitle:@"更多" image:[UIImage imageNamed:unSelectedImgs[4]] selectedImage:[UIImage imageNamed:selectedImgs[4]]];
     AnFengHelperController * moreNavigationController = [[AnFengHelperController alloc]initWithRootViewController:moreViewController];
     NSArray * items = @[loginNavigationController,rechargeNavigationControlller,accountNavigationController,gameHelpNavigationController,moreNavigationController];
     self.viewControllers = items;
     self.selectedIndex = 0;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self initSubControllers];

@@ -14,6 +14,4 @@
 
 +(instancetype)initializeWithImg:(NSString*)img title:(NSString*)title subtitle:(NSString*)subtitle class:(Class)cls;
 
-APPArrowItem * InitializeWithArrowItem(NSString* img,NSString* title,NSString * subtitle,Class targetClass);
-
 @end

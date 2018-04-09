@@ -13,4 +13,10 @@
 #import "APPSwitchItem.h"
 #import "APPCustomItem.h"
 #import "APPGroup.h"
+#import "APPCUSTextFieldViewItem.h"
+
+#define KEYBOARD_TYPE @"keyboardType"
+#define PLACEHOLDER  @"placeholder"
+#define TEXT_RANGE  @"textRange"
+
 #endif /* APPItemConfig_h */

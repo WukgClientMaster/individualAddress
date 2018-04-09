@@ -159,7 +159,6 @@
 {
     CAKeyframeAnimation *menuBounceAnim = [CAKeyframeAnimation animationWithKeyPath:@"position"];
     menuBounceAnim.duration = self.animationDuration;
-    menuBounceAnim.delegate = self;
     menuBounceAnim.removedOnCompletion = NO;
     menuBounceAnim.fillMode = kCAFillModeForwards;
     menuBounceAnim.values = [self menuPositionValuesForMenuState:state];

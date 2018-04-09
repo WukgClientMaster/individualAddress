@@ -75,6 +75,41 @@
 #define  __NSLogPoint(point) __NSLog(@"%s x:%.4f, y:%.4f", #point, point.x, point.y)
 
 
+
+#define System_Simulator_iPad   (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define System_Simulator_iPhone (UI_USER_INTERFACE_IDIOM() ==UIUserInterfaceIdiomPhone)
+
+static inline float  APPAdapterScaleFontFamily(float iphone6FontSize);
+static inline float  APPAdapterScaleFontFamily(float iphone6FontSize)
+{
+    // {768, 1024}}
+    if (System_Simulator_iPhone) {
+        return [UIScreen mainScreen].bounds.size.width / 375.f * iphone6FontSize;
+    }
+    else
+        return [UIScreen mainScreen].bounds.size.width / 768.f  * iphone6FontSize;
+}
+
+static inline float APPAdapterScaleWith(float iphone6Width);
+static inline float APPAdapterScaleWith(float iphone6Width)
+{
+    if (System_Simulator_iPhone) {
+        return [UIScreen mainScreen].bounds.size.width / 375.f * iphone6Width *1.0;
+    }
+    else
+        return [UIScreen mainScreen].bounds.size.width / 768.0f * iphone6Width;
+}
+
+static inline float APPAdapterAdjustHeight(float iphone6Height);
+static inline float APPAdapterAdjustHeight(float iphone6Height)
+{
+    if (System_Simulator_iPhone) {
+        return [UIScreen mainScreen].bounds.size.height / 667.f * iphone6Height *1.0;
+    }
+    else
+        return [UIScreen mainScreen].bounds.size.height / 1024.f * iphone6Height * 1.0f;
+}
+/*
 static inline float  APPAdapterScaleFontFamily(float iphone6FontSize);
 static inline float  APPAdapterScaleFontFamily(float iphone6FontSize)
 {
@@ -84,22 +119,21 @@ static inline float  APPAdapterScaleFontFamily(float iphone6FontSize)
 static inline float APPAdapterScaleWith(float iphone6Width);
 static inline float APPAdapterScaleWith(float iphone6Width)
 {
-    return [UIScreen mainScreen].bounds.size.width / 375.f * iphone6Width;
+    return [UIScreen mainScreen].bounds.size.width / 375.f * iphone6Width *1.0;
 }
 
 static inline float APPAdapterAdjustHeight(float iphone6Height);
 static inline float APPAdapterAdjustHeight(float iphone6Height)
 {
-    return [UIScreen mainScreen].bounds.size.height / 667.f * iphone6Height;
+    return [UIScreen mainScreen].bounds.size.height / 667.f * iphone6Height *1.0;
 }
-
+*/
 /*
 NSMutableDictionary * _mutableDictionary;\
 if (!_mutableDictionary) {\
     _mutableDictionary = [[NSMutableDictionary alloc] init];\
 #define OA_DEFINE_TYPE_ECODE_CASE(__name,__type) \
 [_name setObject:[NSString stringWithUTF8String:@encode(__type)] forKey:@#__type];\
-
     OA_DEFINE_TYPE_ECODE_CASE(id)
     OA_DEFINE_TYPE_ECODE_CASE(BOOL)
     OA_DEFINE_TYPE_ECODE_CASE(int)
