@@ -13,6 +13,7 @@
 #import "AccountDataController.h"
 #import "AccountViewModel.h"
 #import "CellViewModel.h"
+#import <AVFoundation/AVFoundation.h>
 
 @interface AccountCenterViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) UITableView * tableView;

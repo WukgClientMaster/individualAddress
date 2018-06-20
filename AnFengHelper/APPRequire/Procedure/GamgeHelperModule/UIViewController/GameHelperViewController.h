@@ -9,5 +9,6 @@
 #import "OOBaseController.h"
 
 @interface GameHelperViewController : OOBaseController
+@property(nonatomic,strong) UIFont *  selectedFont;
 
 @end

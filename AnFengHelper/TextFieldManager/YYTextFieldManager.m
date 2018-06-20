@@ -21,8 +21,7 @@ void * kTextFieldManagerKeyPath = &kTextFieldManagerKeyPath;
 dispatch_once_t  once;
 @implementation YYTextFieldManager
 
-+(instancetype)shareInstance;
-{
++(instancetype)shareInstance{
     dispatch_once(&once, ^{
         if (!_manager) {
             _manager  = [[YYTextFieldManager alloc]init];

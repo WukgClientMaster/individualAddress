@@ -16,11 +16,23 @@
 		246CB9232078B50000E297F0 /* AccountSuperCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 246CB9222078B50000E297F0 /* AccountSuperCell.m */; };
 		246CB9262078B97B00E297F0 /* AccountModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 246CB9252078B97B00E297F0 /* AccountModel.m */; };
 		3D0D1526D53BBBF96BFFBC36 /* libPods-AnFengHelper.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 639899A854DD58DC56B50419 /* libPods-AnFengHelper.a */; };
+		5D0EB0A4209EF9E5006E9F4F /* Play@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0EB0A2209EF9E5006E9F4F /* Play@2x.png */; };
+		5D0EB0A5209EF9E5006E9F4F /* Stop@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5D0EB0A3209EF9E5006E9F4F /* Stop@2x.png */; };
+		5D0FDA5220A842C100EF1659 /* DataFielManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D0FDA5120A842C100EF1659 /* DataFielManager.m */; };
 		5D2C100820790EE400355294 /* AccountDataController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C100720790EE400355294 /* AccountDataController.m */; };
 		5D2C100B20790F0300355294 /* AccountViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C100A20790F0300355294 /* AccountViewModel.m */; };
 		5D2C100E20791DC600355294 /* AccountLabsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C100D20791DC600355294 /* AccountLabsCell.m */; };
 		5D2C101120791DDC00355294 /* AccountNoneLabsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C101020791DDC00355294 /* AccountNoneLabsCell.m */; };
 		5D2C1017207922D100355294 /* CellViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D2C1016207922D100355294 /* CellViewModel.m */; };
+		5D3198E820A1E36400F6C851 /* TEST1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3198E720A1E36400F6C851 /* TEST1ViewController.m */; };
+		5D3198EB20A1E39900F6C851 /* TEST2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3198EA20A1E39900F6C851 /* TEST2ViewController.m */; };
+		5D3198EE20A1E8E000F6C851 /* TESTNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D3198ED20A1E8E000F6C851 /* TESTNavigationController.m */; };
+		5D67154E20B120310083D8FB /* HorizontalLayOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67154D20B120310083D8FB /* HorizontalLayOut.m */; };
+		5D67155120B1204A0083D8FB /* CollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67155020B1204A0083D8FB /* CollectionViewCell.m */; };
+		5D67155420B120CD0083D8FB /* CollectionModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D67155320B120CD0083D8FB /* CollectionModel.m */; };
+		5D9A7F8D20D74429009E394D /* filter1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D9A7F8B20D74429009E394D /* filter1.jpeg */; };
+		5D9A7F8E20D74429009E394D /* filter2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D9A7F8C20D74429009E394D /* filter2.jpeg */; };
+		5DAEECA420D7A724007461E1 /* CGContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAEECA320D7A724007461E1 /* CGContentView.m */; };
 		6B1427071E9E15E300258520 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1427061E9E15E300258520 /* UIScrollView+Extension.m */; };
 		6B7CC1D21E714AC00061C622 /* BMPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC1D11E714AC00061C622 /* BMPopView.m */; };
 		6B7CC2231E715E380061C622 /* FeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC2221E715E380061C622 /* FeatureController.m */; };
@@ -241,6 +253,10 @@
 		246CB9242078B97B00E297F0 /* AccountModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountModel.h; sourceTree = "<group>"; };
 		246CB9252078B97B00E297F0 /* AccountModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountModel.m; sourceTree = "<group>"; };
 		280AE4850741D417ABEF48C0 /* Pods-AnFengHelper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AnFengHelper.release.xcconfig"; path = "Pods/Target Support Files/Pods-AnFengHelper/Pods-AnFengHelper.release.xcconfig"; sourceTree = "<group>"; };
+		5D0EB0A2209EF9E5006E9F4F /* Play@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Play@2x.png"; sourceTree = "<group>"; };
+		5D0EB0A3209EF9E5006E9F4F /* Stop@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Stop@2x.png"; sourceTree = "<group>"; };
+		5D0FDA5020A842C100EF1659 /* DataFielManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DataFielManager.h; sourceTree = "<group>"; };
+		5D0FDA5120A842C100EF1659 /* DataFielManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DataFielManager.m; sourceTree = "<group>"; };
 		5D2C100620790EE400355294 /* AccountDataController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountDataController.h; sourceTree = "<group>"; };
 		5D2C100720790EE400355294 /* AccountDataController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountDataController.m; sourceTree = "<group>"; };
 		5D2C100920790F0300355294 /* AccountViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AccountViewModel.h; sourceTree = "<group>"; };
@@ -251,6 +267,22 @@
 		5D2C101020791DDC00355294 /* AccountNoneLabsCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AccountNoneLabsCell.m; sourceTree = "<group>"; };
 		5D2C1015207922D100355294 /* CellViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CellViewModel.h; sourceTree = "<group>"; };
 		5D2C1016207922D100355294 /* CellViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CellViewModel.m; sourceTree = "<group>"; };
+		5D3198E620A1E36400F6C851 /* TEST1ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEST1ViewController.h; sourceTree = "<group>"; };
+		5D3198E720A1E36400F6C851 /* TEST1ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEST1ViewController.m; sourceTree = "<group>"; };
+		5D3198E920A1E39900F6C851 /* TEST2ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TEST2ViewController.h; sourceTree = "<group>"; };
+		5D3198EA20A1E39900F6C851 /* TEST2ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TEST2ViewController.m; sourceTree = "<group>"; };
+		5D3198EC20A1E8E000F6C851 /* TESTNavigationController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TESTNavigationController.h; sourceTree = "<group>"; };
+		5D3198ED20A1E8E000F6C851 /* TESTNavigationController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TESTNavigationController.m; sourceTree = "<group>"; };
+		5D67154C20B120310083D8FB /* HorizontalLayOut.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HorizontalLayOut.h; path = AnFengHelper/APPRequire/Procedure/GamgeHelperModule/HorizontalLayOut.h; sourceTree = SOURCE_ROOT; };
+		5D67154D20B120310083D8FB /* HorizontalLayOut.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = HorizontalLayOut.m; path = AnFengHelper/APPRequire/Procedure/GamgeHelperModule/HorizontalLayOut.m; sourceTree = SOURCE_ROOT; };
+		5D67154F20B1204A0083D8FB /* CollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CollectionViewCell.h; path = AnFengHelper/APPRequire/Procedure/GamgeHelperModule/CollectionViewCell.h; sourceTree = SOURCE_ROOT; };
+		5D67155020B1204A0083D8FB /* CollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CollectionViewCell.m; path = AnFengHelper/APPRequire/Procedure/GamgeHelperModule/CollectionViewCell.m; sourceTree = SOURCE_ROOT; };
+		5D67155220B120CD0083D8FB /* CollectionModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = CollectionModel.h; path = AnFengHelper/APPRequire/Procedure/GamgeHelperModule/CollectionModel.h; sourceTree = SOURCE_ROOT; };
+		5D67155320B120CD0083D8FB /* CollectionModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = CollectionModel.m; path = AnFengHelper/APPRequire/Procedure/GamgeHelperModule/CollectionModel.m; sourceTree = SOURCE_ROOT; };
+		5D9A7F8B20D74429009E394D /* filter1.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filter1.jpeg; sourceTree = "<group>"; };
+		5D9A7F8C20D74429009E394D /* filter2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filter2.jpeg; sourceTree = "<group>"; };
+		5DAEECA220D7A724007461E1 /* CGContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContentView.h; sourceTree = "<group>"; };
+		5DAEECA320D7A724007461E1 /* CGContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContentView.m; sourceTree = "<group>"; };
 		639899A854DD58DC56B50419 /* libPods-AnFengHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnFengHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1427051E9E15E300258520 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
 		6B1427061E9E15E300258520 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
@@ -774,27 +806,6 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		246CB91820786A4B00E297F0 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		246CB91920786A4B00E297F0 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		246CB91A20786A4B00E297F0 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		494325427F41385A0BCB3F64 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -803,6 +814,44 @@
 				EFDB3CA392846BC8AB1413EA /* Pods-AnFengHelper.beta.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		5D0EB0A1209EF9E5006E9F4F /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5D0EB0A2209EF9E5006E9F4F /* Play@2x.png */,
+				5D0EB0A3209EF9E5006E9F4F /* Stop@2x.png */,
+				5D9A7F8B20D74429009E394D /* filter1.jpeg */,
+				5D9A7F8C20D74429009E394D /* filter2.jpeg */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		5D67154920B10F0C0083D8FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5D67155220B120CD0083D8FB /* CollectionModel.h */,
+				5D67155320B120CD0083D8FB /* CollectionModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		5D67154A20B10F0C0083D8FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5D67154C20B120310083D8FB /* HorizontalLayOut.h */,
+				5D67154D20B120310083D8FB /* HorizontalLayOut.m */,
+				5D67154F20B1204A0083D8FB /* CollectionViewCell.h */,
+				5D67155020B1204A0083D8FB /* CollectionViewCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		5D67154B20B10F0C0083D8FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		69ECEEA201384A9FEB73CFA7 /* Frameworks */ = {
@@ -878,6 +927,17 @@
 				6B8625E21E714260006DB9F4 /* ConfiguationPrefix.pch */,
 				6B8628421E7145BA006DB9F4 /* ProjectAppConfiguration.h */,
 				6B8628431E7145D3006DB9F4 /* LearnObjectiveC_TypeDefiner.h */,
+				5D3198E620A1E36400F6C851 /* TEST1ViewController.h */,
+				5D3198E720A1E36400F6C851 /* TEST1ViewController.m */,
+				5D3198E920A1E39900F6C851 /* TEST2ViewController.h */,
+				5D3198EA20A1E39900F6C851 /* TEST2ViewController.m */,
+				5D3198EC20A1E8E000F6C851 /* TESTNavigationController.h */,
+				5D3198ED20A1E8E000F6C851 /* TESTNavigationController.m */,
+				5D0FDA5020A842C100EF1659 /* DataFielManager.h */,
+				5D0FDA5120A842C100EF1659 /* DataFielManager.m */,
+				5DAEECA220D7A724007461E1 /* CGContentView.h */,
+				5DAEECA320D7A724007461E1 /* CGContentView.m */,
+				5D0EB0A1209EF9E5006E9F4F /* Source */,
 				246CB9052078609C00E297F0 /* IndictorView */,
 				246CB9022078609C00E297F0 /* TextFieldManager */,
 				6B9C84981E7FA75A00E91801 /* APPINFO */,
@@ -1661,9 +1721,9 @@
 		6BD523731E725BAC00918160 /* GamgeHelperModule */ = {
 			isa = PBXGroup;
 			children = (
-				246CB91820786A4B00E297F0 /* Model */,
-				246CB91A20786A4B00E297F0 /* View */,
-				246CB91920786A4B00E297F0 /* ViewModel */,
+				5D67154920B10F0C0083D8FB /* Model */,
+				5D67154A20B10F0C0083D8FB /* View */,
+				5D67154B20B10F0C0083D8FB /* ViewModel */,
 				6BD523761E725BAC00918160 /* UIViewController */,
 			);
 			path = GamgeHelperModule;
@@ -1844,12 +1904,12 @@
 		6B8625B01E713F35006DB9F4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0700;
+				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = AnFen;
 				TargetAttributes = {
 					6B8625B71E713F35006DB9F4 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = BMBPTRQ2Q4;
+						DevelopmentTeam = 8B8Y23T5Y9;
 					};
 				};
 			};
@@ -1877,8 +1937,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				6BFAFE751E88E95A009DE068 /* Images.xcassets in Resources */,
+				5D9A7F8E20D74429009E394D /* filter2.jpeg in Resources */,
+				5D9A7F8D20D74429009E394D /* filter1.jpeg in Resources */,
 				6B8628041E714261006DB9F4 /* IQKeyboardManager.bundle in Resources */,
+				5D0EB0A4209EF9E5006E9F4F /* Play@2x.png in Resources */,
 				6B86280E1E714261006DB9F4 /* MJRefresh.bundle in Resources */,
+				5D0EB0A5209EF9E5006E9F4F /* Stop@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1973,7 +2037,9 @@
 				6B8627DC1E714261006DB9F4 /* AppCacheManager.m in Sources */,
 				6B8627B91E714261006DB9F4 /* UIViewController+Transitioning.m in Sources */,
 				6B8627C91E714261006DB9F4 /* CAlertView.m in Sources */,
+				5D67155420B120CD0083D8FB /* CollectionModel.m in Sources */,
 				6B86282A1E714261006DB9F4 /* CoreDataManager.m in Sources */,
+				5DAEECA420D7A724007461E1 /* CGContentView.m in Sources */,
 				6B8627C71E714261006DB9F4 /* AutoBannerView.m in Sources */,
 				6B86278E1E714260006DB9F4 /* NSString+Path.m in Sources */,
 				6B8627FB1E714261006DB9F4 /* IQUIWindow+Hierarchy.m in Sources */,
@@ -2013,6 +2079,7 @@
 				6B8627DE1E714261006DB9F4 /* HttpPage.m in Sources */,
 				6B8628171E714261006DB9F4 /* UIScrollView+MJExtension.m in Sources */,
 				6BD5238C1E725C9500918160 /* OOBaseController.m in Sources */,
+				5D67154E20B120310083D8FB /* HorizontalLayOut.m in Sources */,
 				6B8627A51E714260006DB9F4 /* OOGuideViewController.m in Sources */,
 				6B8627B31E714261006DB9F4 /* UIResponder+Observer.m in Sources */,
 				6BDBEA121E76445F007F5436 /* APPDataBaseQueue.m in Sources */,
@@ -2036,9 +2103,11 @@
 				6B8627911E714260006DB9F4 /* NSUserDefaults+NSKeyedArchiver.m in Sources */,
 				6B86280D1E714261006DB9F4 /* View+MASAdditions.m in Sources */,
 				6B8627E71E714261006DB9F4 /* NSString+MJExtension.m in Sources */,
+				5D3198E820A1E36400F6C851 /* TEST1ViewController.m in Sources */,
 				6BF4BAFA1E78D1DC00B32B34 /* HTTPURLSessionManager.m in Sources */,
 				6B8627A91E714260006DB9F4 /* UITableView+FDTemplateLayoutCell.m in Sources */,
 				6B8627CF1E714261006DB9F4 /* ScrollViewZoom.m in Sources */,
+				5D3198EB20A1E39900F6C851 /* TEST2ViewController.m in Sources */,
 				6BD523B31E728CAC00918160 /* APPCustomItem.m in Sources */,
 				6BD5239E1E725D3900918160 /* LoginViewController.m in Sources */,
 				5D2C100820790EE400355294 /* AccountDataController.m in Sources */,
@@ -2068,6 +2137,7 @@
 				6B8628031E714261006DB9F4 /* IQUIView+IQKeyboardToolbar.m in Sources */,
 				6B8627E21E714261006DB9F4 /* MJProperty.m in Sources */,
 				6B8628121E714261006DB9F4 /* MJRefreshGifFooter.m in Sources */,
+				5D0FDA5220A842C100EF1659 /* DataFielManager.m in Sources */,
 				6BDBEA021E763688007F5436 /* APPSqliteManager.m in Sources */,
 				6BD5236A1E725A6900918160 /* AnFengHelperController.m in Sources */,
 				6B8627A31E714260006DB9F4 /* OOBaseViewContrlManager.m in Sources */,
@@ -2113,6 +2183,7 @@
 				6B8628241E714261006DB9F4 /* UIButton+WebCache.m in Sources */,
 				6BD523AA1E728BD800918160 /* APPGroup.m in Sources */,
 				6B86281F1E714261006DB9F4 /* SDWebImageDecoder.m in Sources */,
+				5D67155120B1204A0083D8FB /* CollectionViewCell.m in Sources */,
 				6B8628371E714261006DB9F4 /* UtilityTool.m in Sources */,
 				6B8627CE1E714261006DB9F4 /* ScreenPlateView.m in Sources */,
 				6B86279F1E714260006DB9F4 /* OOBaseNavigaionController.m in Sources */,
@@ -2145,6 +2216,7 @@
 				6B8627D21E714261006DB9F4 /* NextMenuViewController.m in Sources */,
 				6B8627B61E714261006DB9F4 /* UITextField+Behaviour.m in Sources */,
 				6B8627901E714260006DB9F4 /* NSString+Time.m in Sources */,
+				5D3198EE20A1E8E000F6C851 /* TESTNavigationController.m in Sources */,
 				6B8627861E714260006DB9F4 /* NSArray+Query.m in Sources */,
 				6B8627DA1E714261006DB9F4 /* AccountKeyChain.m in Sources */,
 			);
@@ -2166,13 +2238,21 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_MODULES_AUTOLINK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -2182,6 +2262,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -2208,18 +2289,19 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-1";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
+				BUNDLE_IDENTIFIER = com.wukg.cn;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BMBPTRQ2Q4;
+				DEVELOPMENT_TEAM = 8B8Y23T5Y9;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "AnFeng.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wukg.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
@@ -2238,13 +2320,21 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_MODULES_AUTOLINK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -2253,6 +2343,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"Beta=2",
@@ -2280,18 +2371,19 @@
 				APP_DISPLAY_NAME = " 个人宣讲";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-1";
+				BUNDLE_IDENTIFIER = com.wukg.cn;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = BMBPTRQ2Q4;
+				DEVELOPMENT_TEAM = 8B8Y23T5Y9;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "AnFeng.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wukg.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
@@ -2310,13 +2402,21 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_MODULES_AUTOLINK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
@@ -2326,6 +2426,7 @@
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = "";
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
@@ -2349,19 +2450,20 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				BUNDLE_IDENTIFIER = com.wukg.cn;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = BMBPTRQ2Q4;
+				DEVELOPMENT_TEAM = 8B8Y23T5Y9;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "AnFeng.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.wukg.cn;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
 			};
