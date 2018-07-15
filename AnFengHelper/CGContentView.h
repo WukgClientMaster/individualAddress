@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CGContentView : UIView
+    @interface CGContentView : UIView
 
 @end

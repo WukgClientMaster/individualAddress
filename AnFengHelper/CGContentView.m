@@ -44,7 +44,7 @@
     [super drawRect:rect];
     CGContextRef ctx = UIGraphicsGetCurrentContext();
     CGContextSaveGState(ctx);
-    for (int i = 0; i < self.nodes.count; i++) {
+    for (int i =    0; i < self.nodes.count; i++) {
         NSValue * value = self.nodes[i];
         if (i == 0) {
             CGContextMoveToPoint(ctx, [value CGPointValue].x,[value CGPointValue].y);

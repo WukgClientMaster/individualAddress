@@ -33,6 +33,10 @@
 		5D9A7F8D20D74429009E394D /* filter1.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D9A7F8B20D74429009E394D /* filter1.jpeg */; };
 		5D9A7F8E20D74429009E394D /* filter2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 5D9A7F8C20D74429009E394D /* filter2.jpeg */; };
 		5DAEECA420D7A724007461E1 /* CGContentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DAEECA320D7A724007461E1 /* CGContentView.m */; };
+		5DDA543220FB76BF00E8C744 /* UIScrollView+ZFPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DDA543120FB76BF00E8C744 /* UIScrollView+ZFPlayer.m */; };
+		5DFBE4BE20FA1F42002FBAD6 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBE4BD20FA1F42002FBAD6 /* TableViewCell.m */; };
+		5DFBE4C120FA217D002FBAD6 /* VideoJsonModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBE4C020FA217D002FBAD6 /* VideoJsonModel.m */; };
+		5DFBE4C420FA23BB002FBAD6 /* VideoPlayerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DFBE4C320FA23BB002FBAD6 /* VideoPlayerView.m */; };
 		6B1427071E9E15E300258520 /* UIScrollView+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B1427061E9E15E300258520 /* UIScrollView+Extension.m */; };
 		6B7CC1D21E714AC00061C622 /* BMPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC1D11E714AC00061C622 /* BMPopView.m */; };
 		6B7CC2231E715E380061C622 /* FeatureController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7CC2221E715E380061C622 /* FeatureController.m */; };
@@ -283,6 +287,14 @@
 		5D9A7F8C20D74429009E394D /* filter2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = filter2.jpeg; sourceTree = "<group>"; };
 		5DAEECA220D7A724007461E1 /* CGContentView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CGContentView.h; sourceTree = "<group>"; };
 		5DAEECA320D7A724007461E1 /* CGContentView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CGContentView.m; sourceTree = "<group>"; };
+		5DDA543020FB76BF00E8C744 /* UIScrollView+ZFPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+ZFPlayer.h"; path = "AnFengHelper/UIScrollView+ZFPlayer.h"; sourceTree = SOURCE_ROOT; };
+		5DDA543120FB76BF00E8C744 /* UIScrollView+ZFPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+ZFPlayer.m"; path = "AnFengHelper/UIScrollView+ZFPlayer.m"; sourceTree = SOURCE_ROOT; };
+		5DFBE4BC20FA1F42002FBAD6 /* TableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = TableViewCell.h; path = AnFengHelper/TableViewCell.h; sourceTree = SOURCE_ROOT; };
+		5DFBE4BD20FA1F42002FBAD6 /* TableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = TableViewCell.m; path = AnFengHelper/TableViewCell.m; sourceTree = SOURCE_ROOT; };
+		5DFBE4BF20FA217D002FBAD6 /* VideoJsonModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoJsonModel.h; path = AnFengHelper/VideoJsonModel.h; sourceTree = SOURCE_ROOT; };
+		5DFBE4C020FA217D002FBAD6 /* VideoJsonModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoJsonModel.m; path = AnFengHelper/VideoJsonModel.m; sourceTree = SOURCE_ROOT; };
+		5DFBE4C220FA23BB002FBAD6 /* VideoPlayerView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = VideoPlayerView.h; path = AnFengHelper/VideoPlayerView.h; sourceTree = SOURCE_ROOT; };
+		5DFBE4C320FA23BB002FBAD6 /* VideoPlayerView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = VideoPlayerView.m; path = AnFengHelper/VideoPlayerView.m; sourceTree = SOURCE_ROOT; };
 		639899A854DD58DC56B50419 /* libPods-AnFengHelper.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AnFengHelper.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B1427051E9E15E300258520 /* UIScrollView+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+Extension.h"; sourceTree = "<group>"; };
 		6B1427061E9E15E300258520 /* UIScrollView+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+Extension.m"; sourceTree = "<group>"; };
@@ -832,6 +844,8 @@
 			children = (
 				5D67155220B120CD0083D8FB /* CollectionModel.h */,
 				5D67155320B120CD0083D8FB /* CollectionModel.m */,
+				5DFBE4BF20FA217D002FBAD6 /* VideoJsonModel.h */,
+				5DFBE4C020FA217D002FBAD6 /* VideoJsonModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -843,6 +857,12 @@
 				5D67154D20B120310083D8FB /* HorizontalLayOut.m */,
 				5D67154F20B1204A0083D8FB /* CollectionViewCell.h */,
 				5D67155020B1204A0083D8FB /* CollectionViewCell.m */,
+				5DFBE4BC20FA1F42002FBAD6 /* TableViewCell.h */,
+				5DFBE4BD20FA1F42002FBAD6 /* TableViewCell.m */,
+				5DFBE4C220FA23BB002FBAD6 /* VideoPlayerView.h */,
+				5DFBE4C320FA23BB002FBAD6 /* VideoPlayerView.m */,
+				5DDA543020FB76BF00E8C744 /* UIScrollView+ZFPlayer.h */,
+				5DDA543120FB76BF00E8C744 /* UIScrollView+ZFPlayer.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -2031,6 +2051,7 @@
 				6B8628361E714261006DB9F4 /* UtilitySmoothCurveTool.m in Sources */,
 				6B8627D31E714261006DB9F4 /* OOWebViewController.m in Sources */,
 				6BD523BD1E72AA8E00918160 /* SettingCell.m in Sources */,
+				5DDA543220FB76BF00E8C744 /* UIScrollView+ZFPlayer.m in Sources */,
 				6B8628141E714261006DB9F4 /* MJRefreshHeader.m in Sources */,
 				6BD523981E725D0000918160 /* MoreViewController.m in Sources */,
 				6B8627981E714260006DB9F4 /* HUTransitionVerticalLinesAnimator.m in Sources */,
@@ -2161,6 +2182,7 @@
 				6B1427071E9E15E300258520 /* UIScrollView+Extension.m in Sources */,
 				6B8628321E714261006DB9F4 /* CumsterAlertManager.m in Sources */,
 				6B86278B1E714260006DB9F4 /* NSString+Encode.m in Sources */,
+				5DFBE4BE20FA1F42002FBAD6 /* TableViewCell.m in Sources */,
 				6BF4BB001E78D2C400B32B34 /* HTTPRequestSerialization.m in Sources */,
 				6B8627A81E714260006DB9F4 /* UITableView+FDKeyedHeightCache.m in Sources */,
 				6BD523A41E725D6500918160 /* AccountCenterViewController.m in Sources */,
@@ -2214,10 +2236,12 @@
 				6B8627C11E714261006DB9F4 /* PickerSourceModel.m in Sources */,
 				6BD5236D1E725A8700918160 /* AnFengTabBarController.m in Sources */,
 				6B8627D21E714261006DB9F4 /* NextMenuViewController.m in Sources */,
+				5DFBE4C420FA23BB002FBAD6 /* VideoPlayerView.m in Sources */,
 				6B8627B61E714261006DB9F4 /* UITextField+Behaviour.m in Sources */,
 				6B8627901E714260006DB9F4 /* NSString+Time.m in Sources */,
 				5D3198EE20A1E8E000F6C851 /* TESTNavigationController.m in Sources */,
 				6B8627861E714260006DB9F4 /* NSArray+Query.m in Sources */,
+				5DFBE4C120FA217D002FBAD6 /* VideoJsonModel.m in Sources */,
 				6B8627DA1E714261006DB9F4 /* AccountKeyChain.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
