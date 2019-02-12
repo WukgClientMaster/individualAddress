@@ -10,7 +10,7 @@
 #import "YYTextFieldManager.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface SettingCell ()
+@interface SettingCell ()<UITextFieldDelegate>
 
 @property(nonatomic,strong) UISwitch * switchItem;
 @property(nonatomic,readwrite,strong) APPTextField * textField;
@@ -44,6 +44,8 @@
             _textField.layer.borderWidth = 1.f;
             _textField.layer.masksToBounds = YES;
             _textField.backgroundColor = [UIColor whiteColor];
+			_textField.delegate = self;
+			_textField.returnKeyType = UIReturnKeyDone;
         }
         _textField;
     });
@@ -152,6 +154,11 @@
     }
 }
 
+-(void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+	[super touchesBegan:touches withEvent:event];
+	[self.textField resignFirstResponder];
+}
+
 -(void)valueChange:(APPTextField*)textField{
     NSString * text = textField.text;
     NSInteger  length = text.length;
@@ -170,4 +177,11 @@
     }
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+	[textField resignFirstResponder];
+	return YES;
+}
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+	
+}
 @end

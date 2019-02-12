@@ -23,6 +23,7 @@
 @property(nonatomic,strong) UIButton * video_status_btn;
 @property(nonatomic,copy) NSString * videoRotateStatusString;
 @property(nonatomic,weak) TEST1ViewController * test1VC;
+@property (assign, nonatomic) UIInterfaceOrientation  toInterfaceOrientation;
 
 @end
 
@@ -48,9 +49,21 @@ void * AVPlayerItemLoadTimeRangesKey = &AVPlayerItemLoadTimeRangesKey;
     }
 }
 
+
 -(void)videoRotate:(UIButton*)args{
+	self.renderView.transform = CGAffineTransformMakeRotation(M_PI);
+	NSLog(@"self.renderView.frame =%@",NSStringFromCGRect(self.renderView.frame));
     if ([self.videoRotateStatusString isEqualToString:@"NO"]) {
-        self.renderView.transform = CGAffineTransformRotate(self.renderView.transform, M_PI_2);
+		if ([[UIDevice currentDevice]respondsToSelector:@selector(setOrientation:)]) {
+			SEL selector = NSSelectorFromString(@"setOrientation:");
+		    NSMethodSignature * signature = [UIDevice instanceMethodSignatureForSelector:selector];
+			NSInvocation * invocation = [NSInvocation invocationWithMethodSignature:signature];
+			[invocation setSelector:selector];
+			[invocation setTarget:[UIDevice currentDevice]];
+			UIInterfaceOrientation orientation =  UIInterfaceOrientationLandscapeRight;
+			[invocation setArgument:&orientation atIndex:2];
+			[invocation invoke];
+		}
         self.videoRotateStatusString = @"YES";
         self.renderView.backgroundColor = [UIColor clearColor];
         self.view.backgroundColor = [[UIColor blackColor]colorWithAlphaComponent:0.9f];
@@ -161,6 +174,58 @@ void * AVPlayerItemLoadTimeRangesKey = &AVPlayerItemLoadTimeRangesKey;
     return _player;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation{
+	return YES;
+}
+
+- (void)willRotateToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+	self.toInterfaceOrientation = toInterfaceOrientation;
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation{
+	if (self.toInterfaceOrientation == UIInterfaceOrientationPortrait
+		|| self.toInterfaceOrientation == UIInterfaceOrientationPortraitUpsideDown) {
+		[self.play_status_btn mas_remakeConstraints:^(MASConstraintMaker *make) {
+			make.size.mas_equalTo(CGSizeMake(60, 30));
+			make.top.mas_equalTo(self.view.mas_top).with.offset(30.f);
+			make.right.mas_equalTo(self.view.mas_right).with.offset(-APPAdapterScaleWith(10.f));
+		}];
+		[self.play_rotate_btn mas_remakeConstraints:^(MASConstraintMaker *make) {
+			make.size.mas_equalTo(CGSizeMake(60, 30));
+			make.top.mas_equalTo(self.view.mas_top).with.offset(30.f);
+			make.left.mas_equalTo(self.view.mas_left).with.offset(APPAdapterScaleWith(10.f));
+		}];
+		self.renderView.transform = CGAffineTransformIdentity;
+		self.renderView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame),CGRectGetHeight(self.view.frame));
+		self.playLayer.bounds = self.renderView.bounds;
+		self.playLayer.position = self.renderView.center;
+	}else{
+		[self.play_status_btn mas_remakeConstraints:^(MASConstraintMaker *make) {
+			make.size.mas_equalTo(CGSizeMake(60, 30));
+			make.top.mas_equalTo(self.view.mas_top).with.offset(30.f);
+			make.left.mas_equalTo(self.view.mas_left).with.offset(APPAdapterScaleWith(10.f));
+		}];
+		[self.play_rotate_btn mas_remakeConstraints:^(MASConstraintMaker *make) {
+			make.size.mas_equalTo(CGSizeMake(60, 30));
+			make.top.mas_equalTo(self.view.mas_top).with.offset(30.f);
+			make.right.mas_equalTo(self.view.mas_right).with.offset(-APPAdapterScaleWith(10.f));
+		}];
+//		self.renderView.transform = CGAffineTransformRotate(self.renderView.transform, M_PI_2);
+		self.renderView.frame = CGRectMake(0, 0, CGRectGetWidth(self.view.frame), CGRectGetHeight(self.view.frame));
+		self.playLayer.bounds = self.renderView.bounds;
+		self.playLayer.position = self.renderView.center;
+		
+	}
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration{
+	
+}
+
+- (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation duration:(NSTimeInterval)duration{
+	
+}
+
 -(void)viewDidLoad{
     [super viewDidLoad];
     self.playLayer = [AVPlayerLayer playerLayerWithPlayer:self.player];
@@ -172,17 +237,27 @@ void * AVPlayerItemLoadTimeRangesKey = &AVPlayerItemLoadTimeRangesKey;
     [self.renderView.layer addSublayer:self.playLayer];
     [self loadSubViewObjects];
     self.videoRotateStatusString = @"NO";
+	[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(willOritentationEvents:) name:UIApplicationWillChangeStatusBarOrientationNotification object:nil];
+	[[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(didOritentationEvents:) name:UIApplicationDidChangeStatusBarOrientationNotification object:nil];
+
 }
+
+-(void)willOritentationEvents:(NSNotification*)notification{
+	
+}
+-(void)didOritentationEvents:(NSNotification*)notification{
+	
+}
+
 
 -(void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
-    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:nil];
     [self.playerItem addObserver:self forKeyPath:@"status" options:(NSKeyValueObservingOptionNew) context:AVPlayerItemStatusKey];
     [self.playerItem addObserver:self forKeyPath:@"loadTimeRanges" options:NSKeyValueObservingOptionNew context:AVPlayerItemLoadTimeRangesKey];
     self.timeObser = [self.player addPeriodicTimeObserverForInterval:CMTimeMake(1,1) queue:dispatch_get_main_queue() usingBlock:^(CMTime time) {
-        CGFloat tiemValue = CMTimeGetSeconds(time);
-        //        NSLog(@"time.value = %2.f timeScale = %d \n",tiemValue,time.timescale);
+//        CGFloat tiemValue = CMTimeGetSeconds(time);
+//		NSLog(@"time.value = %2.f timeScale = %d \n",tiemValue,time.timescale);
     }];
 }
 

@@ -9,7 +9,7 @@
 #import "MoreViewController.h"
 #import "APPItemConfig.h"
 #import "SettingCell.h"
-#import "TESTingViewController.h"
+#import "TableViewController.h"
 
 @interface MoreViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property(nonatomic,strong) UITableView * tableView;
@@ -21,6 +21,10 @@
     _tableView = ({
         if (!_tableView) {
             _tableView  = [[UITableView alloc]initWithFrame:CGRectZero style:UITableViewStyleGrouped];
+			UITableViewController *tvc = [[UITableViewController alloc] initWithStyle:UITableViewStylePlain];
+			[self addChildViewController:tvc];
+			[self.view addSubview:tvc.view];
+			_tableView = tvc.tableView;
             _tableView.delegate   = self;
             _tableView.dataSource = self;
             _tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
@@ -47,14 +51,14 @@
     APPSwitchItem * swItem2 = [APPSwitchItem initializeWithImg:@"" title:@"消息接受系统提醒" subtitle:@""];
     APPGroup * group0 = [APPGroup initializeWithItems:@[swItem1,swItem0,swItem2] header:@"消息设置" footer:@""];
     
-    APPArrowItem * arItem0 = [APPArrowItem initializeWithImg:@"" title:@"更换主题" subtitle:@"" class:[TESTingViewController class]];
+    APPArrowItem * arItem0 = [APPArrowItem initializeWithImg:@"" title:@"更换主题" subtitle:@"" class:[TableViewController class]];
     __weak  typeof(self)weakSelf = self;
     APPCustomItem * cuItem0 = [APPCustomItem initializeWithImg:@"" title:@"联系我们" subtitle:@"" block:^(NSString *msg, id response) {
         __strong typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf showInfoAlertViewWithText:msg];
     }];
     
-    APPArrowItem * arItem1 = [APPArrowItem initializeWithImg:@"" title:@"账号申诉" subtitle:@"" class:[TESTingViewController class]];
+    APPArrowItem * arItem1 = [APPArrowItem initializeWithImg:@"" title:@"账号申诉" subtitle:@"" class:[TableViewController class]];
     APPGroup * group1 = [APPGroup initializeWithItems:@[arItem0,cuItem0,arItem1] header:@"个人服务" footer:@""];
     //自我介绍
     APPCUSTextFieldViewItem * textFieldItem0 = [APPCUSTextFieldViewItem initializeWithImg:@"" title:@"姓名" subtitle:@""];
@@ -71,7 +75,7 @@
 
     
     
-    APPArrowItem * runningHourItem = [APPArrowItem initializeWithImg:@"" title:@"工作年份" subtitle:@"" class:[TESTingViewController class]];
+    APPArrowItem * runningHourItem = [APPArrowItem initializeWithImg:@"" title:@"工作年份" subtitle:@"" class:[TableViewController class]];
     APPGroup * group2 = [APPGroup initializeWithItems:@[textFieldItem0,textFieldItem1,customItem0,textFieldItem2,runningHourItem] header:@"自我介绍" footer:@""];
 
      //教育经历
@@ -79,11 +83,11 @@
         __strong typeof(weakSelf)strongSelf = weakSelf;
         [strongSelf showInfoAlertViewWithText:msg];
     }];
-    APPArrowItem * eduItem1 = [APPArrowItem initializeWithImg:@"" title:@"毕业学校" subtitle:@"" class:[TESTingViewController class]];
+    APPArrowItem * eduItem1 = [APPArrowItem initializeWithImg:@"" title:@"毕业学校" subtitle:@"" class:[TableViewController class]];
     APPCUSTextFieldViewItem * eduItem2 = [APPCUSTextFieldViewItem initializeWithImg:@"" title:@"专业" subtitle:@""];
     eduItem2.configJson = @{KEYBOARD_TYPE:@(UIKeyboardTypeDefault),PLACEHOLDER:@"请填写专业名称",TEXT_RANGE:@[@(0),@(20)]};
 
-    APPArrowItem * eduItem3 = [APPArrowItem initializeWithImg:@"" title:@"毕业时间" subtitle:@"" class:[TESTingViewController class]];
+    APPArrowItem * eduItem3 = [APPArrowItem initializeWithImg:@"" title:@"毕业时间" subtitle:@"" class:[TableViewController class]];
     APPGroup * group3 = [APPGroup initializeWithItems:@[eduItem0,eduItem1,eduItem2,eduItem3] header:@"教育经历" footer:@""];
 
     //屏蔽公司信息
@@ -97,8 +101,13 @@
         __strong typeof(weakSelf)strongSelf =weakSelf;
         [strongSelf showInfoAlertViewWithText:msg];
     }];
-    APPArrowItem * comItem3 = [APPArrowItem initializeWithImg:@"" title:@"期望薪资" subtitle:@"" class:[TESTingViewController class]];
-    APPArrowItem * comItem4 = [APPArrowItem initializeWithImg:@"" title:@"联系邮箱" subtitle:@"" class:[TESTingViewController class]];
+	
+	APPCUSTextFieldViewItem * comItem3 = [APPCUSTextFieldViewItem initializeWithImg:@"" title:@"期望薪资" subtitle:@""];
+	comItem3.configJson = @{KEYBOARD_TYPE:@(UIKeyboardTypeDefault),PLACEHOLDER:@"请输入联系邮箱",TEXT_RANGE:@[@(0),@(5)]};
+	
+	APPCUSTextFieldViewItem * comItem4 = [APPCUSTextFieldViewItem initializeWithImg:@"" title:@"联系邮箱" subtitle:@""];
+	comItem4.configJson = @{KEYBOARD_TYPE:@(UIKeyboardTypeDefault),PLACEHOLDER:@"请输入联系邮箱",TEXT_RANGE:@[@(0),@(5)]};
+	
     APPGroup * group4 = [APPGroup initializeWithItems:@[comItem0,comItem1,comItem2,comItem3,comItem4] header:@"屏蔽公司信息" footer:@""];
     self.items = @[group0,group1,group2,group3,group4].mutableCopy;
 }
@@ -109,6 +118,7 @@
     UIAlertView * alertView = [[UIAlertView alloc]initWithTitle:@"提示" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
     [alertView show];
 }
+
 
 -(void)setObjectView{
     __weak  typeof(self)weakSelf = self;
@@ -123,6 +133,7 @@
     [super viewDidLoad];
     [self setObjectView];
     [self initData];
+	[[IQKeyboardManager sharedManager]setEnable:NO];
     [[IQKeyboardManager sharedManager]setEnableAutoToolbar:NO];
     [[IQKeyboardManager sharedManager]setKeyboardDistanceFromTextField:APPAdapterAdjustHeight(20.f)];
 }
@@ -172,8 +183,8 @@
         APPArrowItem * arrow = (APPArrowItem*)data;
         if (arrow.targetClass) {
             UIViewController * controller = [arrow.targetClass new];
-            if ([controller isKindOfClass:[TESTingViewController class]]) {
-                TESTingViewController *vc = (TESTingViewController*)controller;
+            if ([controller isKindOfClass:[TableViewController class]]) {
+                TableViewController *vc = (TableViewController*)controller;
                 vc.configTitle = arrow.title;
                 [self.navigationController pushViewController:vc animated:YES];
             }

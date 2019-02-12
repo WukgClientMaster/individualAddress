@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24539DD32202D91E0093F161 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24539DD22202D91E0093F161 /* TableViewController.m */; };
 		246CB90D2078609C00E297F0 /* YYTextFieldManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 246CB9042078609C00E297F0 /* YYTextFieldManager.m */; };
 		246CB90E2078609C00E297F0 /* CycleAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 246CB9072078609C00E297F0 /* CycleAnimation.m */; };
 		246CB90F2078609C00E297F0 /* IndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 246CB90A2078609C00E297F0 /* IndicatorView.m */; };
@@ -239,6 +240,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24539DD12202D91E0093F161 /* TableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		24539DD22202D91E0093F161 /* TableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		246CB9032078609C00E297F0 /* YYTextFieldManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYTextFieldManager.h; sourceTree = "<group>"; };
 		246CB9042078609C00E297F0 /* YYTextFieldManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYTextFieldManager.m; sourceTree = "<group>"; };
 		246CB9062078609C00E297F0 /* CycleAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CycleAnimation.h; sourceTree = "<group>"; };
@@ -1826,6 +1829,8 @@
 				6BD523971E725D0000918160 /* MoreViewController.m */,
 				246CB91E20788B5900E297F0 /* TESTingViewController.h */,
 				246CB91F20788B5900E297F0 /* TESTingViewController.m */,
+				24539DD12202D91E0093F161 /* TableViewController.h */,
+				24539DD22202D91E0093F161 /* TableViewController.m */,
 			);
 			path = UIViewController;
 			sourceTree = "<group>";
@@ -1929,7 +1934,7 @@
 				TargetAttributes = {
 					6B8625B71E713F35006DB9F4 = {
 						CreatedOnToolsVersion = 6.1.1;
-						DevelopmentTeam = 8B8Y23T5Y9;
+						DevelopmentTeam = 6R3R7HC62X;
 					};
 				};
 			};
@@ -2167,6 +2172,7 @@
 				6B9C849B1E7FA75A00E91801 /* AppDelegate.m in Sources */,
 				6B8628011E714261006DB9F4 /* IQTitleBarButtonItem.m in Sources */,
 				6B8627AF1E714261006DB9F4 /* UIImage+Effect.m in Sources */,
+				24539DD32202D91E0093F161 /* TableViewController.m in Sources */,
 				6B86279B1E714260006DB9F4 /* PopUpModelTransition.m in Sources */,
 				6B8627C51E714261006DB9F4 /* AsynProgressHUD.m in Sources */,
 				6B8627A21E714260006DB9F4 /* OOBaseTableViewController.m in Sources */,
@@ -2319,7 +2325,7 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8B8Y23T5Y9;
+				DEVELOPMENT_TEAM = 6R3R7HC62X;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
@@ -2401,7 +2407,7 @@
 				CLANG_ENABLE_MODULE_DEBUGGING = YES;
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 8B8Y23T5Y9;
+				DEVELOPMENT_TEAM = 6R3R7HC62X;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
@@ -2481,7 +2487,7 @@
 				CLANG_MODULES_AUTOLINK = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = 8B8Y23T5Y9;
+				DEVELOPMENT_TEAM = 6R3R7HC62X;
 				ENABLE_TESTABILITY = YES;
 				GCC_PREFIX_HEADER = "$(SRCROT)$(PRODUCT_NAME)/ConfiguationPrefix.pch";
 				INFOPLIST_FILE = AnFengHelper/Info.plist;
